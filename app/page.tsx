@@ -26,7 +26,7 @@ export default function HomePage() {
     <div className="aiGrid" />
 
       <h1 className="heroTitle">
-        Building reliable data pipelines that power smarter business decisions.
+        Engineering Scalable Data Platforms & Delivering Insight-Driven Business Decisions.
       </h1>
 
 
