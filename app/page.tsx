@@ -37,23 +37,29 @@ export default function HomePage() {
       </p>
 
       <div className="heroHighlights">
+
         <div className="pill">ETL/ELT • Batch + Streaming</div>
         <div className="pill">Data Quality • Validation • Monitoring</div>
         <div className="pill">Spark • Airflow • SQL</div>
         <div className="pill">AWS • Azure • Snowflake/Redshift</div>
+
       </div>
 
       <div className="ctaRow">
         <Link className="btn btnPrimary" href="/projects">
+          
           View projects →
         </Link>
         <Link className="btn" href="/resume">
+          
           Download resume
         </Link>
         <Link className="btn" href="/contact">
+          
           Contact
         </Link>
         <Link className="btn" href="/Leela_Krishna_Koppolu_Resume.pdf" target="_blank">
+          
           Download Resume
         </Link>
 
