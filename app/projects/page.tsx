@@ -48,7 +48,7 @@ const projects: Project[] = [
       "Created executive-level KPI views with trend + variance insights to support decision making.",
       "Documented metric definitions so business teams trust the numbers and reduce back-and-forth.",
     ],
-    links: [{ label: "LinkedIn", href: "https://www.linkedin.com/" }],
+    links: [{ label: "LinkedIn", href: "https://linkedin.com/in/leelakrishnakoppolu/" }],
   },
 ];
 
