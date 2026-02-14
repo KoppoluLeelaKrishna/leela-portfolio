@@ -109,21 +109,24 @@ export default function HomePage() {
         </section>
       </div>
 
-      <h2 className="sectionTitle">Next steps</h2>
-      <div className="grid">
-        <div className="card col4">
-          <h2>1 Add your projects</h2>
-          <p>Show 3–6 projects with impact, tools, and links.</p>
-        </div>
-        <div className="card col4">
-          <h2>2 Upload resume PDF</h2>
-          <p>Put it in /public and link it on the resume page.</p>
-        </div>
-        <div className="card col4">
-          <h2>3 Deploy on Vercel</h2>
-          <p>Connect GitHub → Vercel → Deploy in 2 minutes.</p>
-        </div>
-      </div>
+  {/* 
+<h2 className="sectionTitle">Next steps</h2>
+<div className="grid">
+  <div className="card col4">
+    <h2>1 Add your projects</h2>
+    <p>Show 3–6 projects with impact, tools, and links.</p>
+  </div>
+  <div className="card col4">
+    <h2>2 Upload resume PDF</h2>
+    <p>Put it in /public and link it on the resume page.</p>
+  </div>
+  <div className="card col4">
+    <h2>3 Deploy on Vercel</h2>
+    <p>Connect GitHub → Vercel → Deploy in 2 minutes.</p>
+  </div>
+</div>
+*/}
+
     </div>
   );
 }
