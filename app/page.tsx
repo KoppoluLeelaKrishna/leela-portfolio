@@ -82,7 +82,7 @@ export default function HomePage() {
         <section className="card col4">
           <h2>Quick links</h2>
           <div className="split">
-            <a className="btn" href="https://www.linkedin.com/in/leelakrishnakoppolu" target="_blank" rel="noopener noreferrer">
+            <a className="btn" href="https://linkedin.com/in/leelakrishnakoppolu/" target="_blank" rel="noopener noreferrer">
               LinkedIn 
             </a>
             <a className="btn" href="https://github.com/KoppoluLeelaKrishna" target="_blank" rel="noopener noreferrer">
@@ -109,7 +109,7 @@ export default function HomePage() {
         </section>
       </div>
 
-  {/* 
+{/* 
 <h2 className="sectionTitle">Next steps</h2>
 <div className="grid">
   <div className="card col4">
