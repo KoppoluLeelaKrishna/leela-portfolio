@@ -13,8 +13,11 @@ export default function Nav() {
     <header className="nav">
       <div className="navInner">
         <div className="brand">
-          <strong>Leela Krishna Koppolu</strong>
-          <span>Data Engineer & Data Analyst</span>
+          <div className="logo">
+            <strong>Leela Krishna Koppolu</strong>
+            <span className="role">Data Engineer & Data Analyst</span>
+         </div>
+
         </div>
 
         <nav className="links" aria-label="Site navigation">
