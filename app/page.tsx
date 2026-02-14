@@ -58,6 +58,14 @@ export default function HomePage() {
         <Link className="btn" href="/Leela_Krishna_Koppolu_Resume.pdf" target="_blank">
             Download Resume
         </Link>
+        <a
+          href="https://www.linkedin.com/in/leela-krishna-klk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btnPrimary"
+        >
+          LinkedIn →
+        </a>
 
       </div>
 
