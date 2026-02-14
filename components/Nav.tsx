@@ -2,10 +2,10 @@ import Link from "next/link";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/resume", label: "Resume" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "about" },
+  { href: "/projects", label: "projects" },
+  { href: "/resume", label: "resume" },
+  { href: "/contact", label: "contact" },
 ];
 
 export default function Nav() {

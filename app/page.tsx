@@ -12,6 +12,10 @@ const skills = [
 export default function HomePage() {
   return (
     <div className="hero">
+
+      {/* AI Background Grid */}
+      <div className="aiGrid" />
+
       <div className="kicker">
         <span>Open to:</span>
         <strong style={{ color: "var(--text)" }}>
@@ -19,23 +23,40 @@ export default function HomePage() {
         </strong>
       </div>
 
-      <h1 className="h1">Building reliable data pipelines + clear insights.</h1>
-      <p className="sub">
-        I'm <strong>Leela Krishna Koppolu</strong> — a Cloud Data Engineer / Data
-        Analyst focused on scalable ETL, data quality, analytics dashboards, and
-        performance optimization across AWS and Azure.
+    <div className="aiGrid" />
+
+      <h1 className="heroTitle">
+        Building reliable data pipelines that power smarter business decisions.
+      </h1>
+
+
+      <p className="heroSub">
+         Cloud Data Engineer focused on scalable data solutions across AWS and Azure.
+         Cloud Data Engineer / Data Analyst specializing in AWS + Azure, Spark/PySpark, SQL, and Power BI.
+         I deliver end-to-end ETL/ELT systems, data quality frameworks, and KPI dashboards used by business teams.
       </p>
+
+      <div className="heroHighlights">
+        <div className="pill">ETL/ELT • Batch + Streaming</div>
+        <div className="pill">Data Quality • Validation • Monitoring</div>
+        <div className="pill">Spark • Airflow • SQL</div>
+        <div className="pill">AWS • Azure • Snowflake/Redshift</div>
+      </div>
 
       <div className="ctaRow">
         <Link className="btn btnPrimary" href="/projects">
-          View Projects →
+          View projects →
         </Link>
         <Link className="btn" href="/resume">
-          Download Resume
+          Download resume
         </Link>
         <Link className="btn" href="/contact">
           Contact
         </Link>
+        <Link className="btn" href="/Leela_Krishna_Koppolu_Resume.pdf" target="_blank">
+          Download Resume
+        </Link>
+
       </div>
 
       <div className="grid">
@@ -59,18 +80,18 @@ export default function HomePage() {
         <section className="card col4">
           <h2>Quick links</h2>
           <div className="split">
-            <a className="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-              LinkedIn (add your URL)
+            <a className="btn" href="https://www.linkedin.com/in/leela-krishna-klk/" target="_blank" rel="noopener noreferrer">
+              LinkedIn 
             </a>
-            <a className="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">
-              GitHub (add your URL)
+            <a className="btn" href="https://github.com/KoppoluLeelaKrishna" target="_blank" rel="noopener noreferrer">
+              GitHub 
             </a>
-            <a className="btn" href="mailto:yourname@email.com">
-              Email (update)
+            <a className="btn" href="mailto:leelakrishnakoppolu@gmail.com">
+              Email 
             </a>
           </div>
           <p className="itemMeta" style={{ marginTop: 10 }}>
-            Tip: Replace these links with your actual profile URLs.
+            Click on it — I reply quickly!
           </p>
         </section>
 
@@ -94,7 +115,7 @@ export default function HomePage() {
         </div>
         <div className="card col4">
           <h2>2 Upload resume PDF</h2>
-          <p>Put it in /public and link it on the Resume page.</p>
+          <p>Put it in /public and link it on the resume page.</p>
         </div>
         <div className="card col4">
           <h2>3 Deploy on Vercel</h2>

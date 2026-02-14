@@ -107,3 +107,76 @@ body {
 .btn:hover {
   background: #374151;
 }
+
+.heroHighlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pill {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.card {
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.aiGrid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(120, 200, 255, 0.10), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(140, 120, 255, 0.10), transparent 35%),
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: auto, auto, 48px 48px, 48px 48px;
+  opacity: 0.75;
+  filter: blur(0px);
+}
+
+@media (max-width: 600px) {
+  .heroHighlights {
+    flex-direction: column;
+  }
+}
+
+/* ===== AI GRID BACKGROUND ===== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.aiGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+
+  z-index: 0;
+}
+
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+

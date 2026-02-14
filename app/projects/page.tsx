@@ -9,48 +9,49 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Cloud ETL Pipeline (Batch) — AWS",
-    timeframe: "2025",
+    title: "Enterprise ETL Platform — AWS (S3 • Glue • Spark • Redshift)",
+    timeframe: "Data Engineering",
     description:
-      "Built an automated batch pipeline for curated analytics datasets with data quality checks and optimized SQL.",
+      "Built automated batch pipelines for analytics-ready datasets with strong data quality + performance tuning.",
     tech: ["S3", "Glue", "Spark", "Redshift", "Athena", "Python", "SQL"],
     bullets: [
-      "Ingested raw data to S3, transformed using Glue/Spark, loaded curated tables for reporting.",
-      "Added data validation rules and failure alerts for reliable daily runs.",
-      "Optimized queries using partitioning and efficient joins to reduce runtime.",
+      "Automated ingestion + transformation workflows; reduced manual effort by ~60% through scheduling + reusable jobs.",
+      "Improved pipeline reliability using validation checks + retry patterns; minimized broken dashboard incidents.",
+      "Optimized ETL runtime using partitioning + join tuning; improved daily refresh performance significantly.",
     ],
     links: [
-      { label: "GitHub (add)", href: "https://github.com/" },
-      { label: "Dashboard (add)", href: "https://www.linkedin.com/" },
+      { label: "GitHub", href: "https://github.com/KoppoluLeelaKrishna" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/" },
     ],
   },
   {
-    title: "Analytics Dashboard — Power BI",
-    timeframe: "2025",
+    title: "Data Quality Framework — Rules + Alerts",
+    timeframe: "Quality + Monitoring",
     description:
-      "Designed KPI dashboards for business stakeholders with clean, reusable data models.",
-    tech: ["Power BI", "SQL", "Python", "Data Modeling"],
+      "Created a reusable data quality layer for pipelines to catch schema drift, null spikes, and duplicate records.",
+    tech: ["Python", "SQL", "Great Expectations (optional)", "CloudWatch", "Airflow"],
     bullets: [
-      "Built star-schema style model for reporting and improved refresh reliability.",
-      "Created actionable visuals: trend, variance, and segmentation views.",
-      "Documented measures and definitions to reduce stakeholder confusion.",
+      "Implemented validation rules (null %, duplicates, schema checks) before loading curated tables.",
+      "Added alerting for failures to reduce debugging time and speed up recovery during data issues.",
+      "Standardized error outputs (quarantine tables/logs) to make root-cause analysis faster.",
     ],
-    links: [{ label: "Screenshots (add)", href: "https://www.linkedin.com/" }],
+    links: [{ label: "GitHub", href: "https://github.com/KoppoluLeelaKrishna" }],
   },
   {
-    title: "Streaming Ingestion (Template) — Kafka/Spark",
-    timeframe: "2024–2025",
+    title: "KPI Dashboards — Power BI + Star Schema",
+    timeframe: "Analytics",
     description:
-      "Created a reusable template for near real-time ingestion and processing using streaming primitives.",
-    tech: ["Kafka", "Spark Streaming", "Python", "Cloud Storage"],
+      "Designed stakeholder dashboards with consistent KPI definitions and refresh-friendly modeling.",
+    tech: ["Power BI", "SQL", "Data Modeling", "Python"],
     bullets: [
-      "Implemented checkpointing and idempotent writes for reliable processing.",
-      "Handled schema drift with defensive parsing and quarantine outputs.",
-      "Prepared the pipeline for monitoring and SLA reporting.",
+      "Built star-schema reporting model; improved refresh stability and simplified KPI calculations.",
+      "Created executive-level KPI views with trend + variance insights to support decision making.",
+      "Documented metric definitions so business teams trust the numbers and reduce back-and-forth.",
     ],
-    links: [{ label: "GitHub (add)", href: "https://github.com/" }],
+    links: [{ label: "LinkedIn", href: "https://www.linkedin.com/" }],
   },
 ];
+
 
 function ProjectCard({ p }: { p: Project }) {
   return (
@@ -59,6 +60,7 @@ function ProjectCard({ p }: { p: Project }) {
         <strong>{p.title}</strong>
         <span>{p.timeframe}</span>
       </div>
+
       <p className="itemMeta">{p.description}</p>
 
       <div className="badges">
@@ -82,7 +84,7 @@ function ProjectCard({ p }: { p: Project }) {
             className="btn"
             href={l.href}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             {l.label} ↗
           </a>
