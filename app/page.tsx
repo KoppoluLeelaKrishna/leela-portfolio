@@ -47,20 +47,16 @@ export default function HomePage() {
 
       <div className="ctaRow">
         <Link className="btn btnPrimary" href="/projects">
-          
-          View projects →
+            View projects →
         </Link>
         <Link className="btn" href="/resume">
-          
-          Download resume
+            Download resume
         </Link>
         <Link className="btn" href="/contact">
-          
-          Contact
+            Contact
         </Link>
         <Link className="btn" href="/Leela_Krishna_Koppolu_Resume.pdf" target="_blank">
-          
-          Download Resume
+            Download Resume
         </Link>
 
       </div>
