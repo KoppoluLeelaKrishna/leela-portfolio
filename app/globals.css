@@ -113,6 +113,7 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 16px;
+  margin-bottom: 40px;
 }
 
 .pill {
@@ -138,8 +139,8 @@ body {
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(120, 200, 255, 0.10), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(140, 120, 255, 0.10), transparent 35%),
+    radial-gradient(circle at 20% 20%, rgba(120, 255, 253, 0.1), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(120, 255, 224, 0.1), transparent 35%),
     linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: auto, auto, 48px 48px, 48px 48px;
@@ -164,8 +165,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.29) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 
   -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
@@ -180,3 +181,8 @@ body {
   z-index: 1;
 }
 
+.ctaRow {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;     
+}
