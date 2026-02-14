@@ -186,3 +186,21 @@ body {
   gap: 14px;
   margin-top: 8px;     
 }
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;   /* 👈 controls spacing cleanly */
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.divider {
+  opacity: 0.4;
+}
+
+.role {
+  color: var(--text);
+  font-weight: 600;
+}
+ 
