@@ -117,7 +117,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const answer = data?.output_text || "No response text returned.";
+    const answer =
+      data.output_text ||
+      data.output?.[0]?.content?.[0]?.text ||
+      "No response text returned.";
+
+
     
     const cleaned = answer
       .replaceAll("Leela Krishna Koppolu", "I")
