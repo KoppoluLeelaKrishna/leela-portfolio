@@ -15,7 +15,7 @@ export default function ContactPage() {
 
           <a
             className="btn"
-            href="https://www.linkedin.com/in/YOUR_LINKEDIN/"
+            href="https://www.linkedin.com/in/leela-krishna-klk/"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -21,7 +21,7 @@ const projects: Project[] = [
     ],
     links: [
       { label: "GitHub", href: "https://github.com/KoppoluLeelaKrishna" },
-      { label: "LinkedIn", href: "https://www.linkedin.com/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/leela-krishna-klk/" },
     ],
   },
   {
@@ -48,7 +48,7 @@ const projects: Project[] = [
       "Created executive-level KPI views with trend + variance insights to support decision making.",
       "Documented metric definitions so business teams trust the numbers and reduce back-and-forth.",
     ],
-    links: [{ label: "LinkedIn", href: "https://linkedin.com/in/leelakrishnakoppolu/" }],
+    links: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/leela-krishna-klk/" }],
   },
 ];
 

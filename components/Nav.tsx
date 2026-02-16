@@ -15,7 +15,7 @@ export default function Nav() {
         <div className="brand">
           <div className="logo">
             <strong>Leela Krishna Koppolu</strong>
-            <span className="role">Data Engineer & Data Analyst</span>
+            <span className="role">Data Scientist specializing in Data Engineering & Analytics</span>
          </div>
 
         </div>

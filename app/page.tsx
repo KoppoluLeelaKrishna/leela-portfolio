@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import ResumeChat from "@/components/ResumeChat";
 
 const skills = [
   "AWS (S3, Glue, Redshift, Athena, Lambda)",
@@ -9,6 +11,9 @@ const skills = [
   "Power BI • Dashboards • Automation",
 ];
 
+
+
+
 export default function HomePage() {
   return (
     <div className="hero">
@@ -16,25 +21,38 @@ export default function HomePage() {
       {/* AI Background Grid */}
       <div className="aiGrid" />
 
-      <div className="kicker">
-        <span>Open to:</span>
-        <strong style={{ color: "var(--text)" }}>
-          Data Engineer • Data Analyst
-        </strong>
-      </div>
+       {/* LEFT SIDE */}
+        <div className="heroContent">
+          <div className="kicker">
+            <span>Open to:</span>
+            <strong> Data Scientist • Data Engineer • Data Analyst</strong>
+          </div>
+
+        <div className="grid" style={{ marginTop: 24 }}>
+          <section className="card col12">
+            <h2>Ask my Resume (AI)</h2>
+            <p className="sub">
+              Ask anything about my skills, projects, or experience — instant answers.
+            </p>
+            <ResumeChat />
+          </section>
+        </div>
+
 
     <div className="aiGrid" />
 
       <h1 className="heroTitle">
-        Engineering Scalable Data Platforms & Delivering Insight-Driven Business Decisions.
+        Engineering Intelligent Data Systems That Power Analytics & Decision Science
       </h1>
 
 
       <p className="heroSub">
-         Cloud Data Engineer focused on scalable data solutions across AWS and Azure.
-         Cloud Data Engineer / Data Analyst specializing in AWS + Azure, Spark/PySpark, SQL, and Power BI.
-         I deliver end-to-end ETL/ELT systems, data quality frameworks, and KPI dashboards used by business teams.
+         I work at the intersection of Data Science, Data Engineering, and Analytics — 
+         designing scalable data platforms, implementing quality-driven pipelines, 
+         and delivering actionable insights for business growth.
       </p>
+
+
 
       <div className="heroHighlights">
 
@@ -44,6 +62,21 @@ export default function HomePage() {
         <div className="pill">AWS • Azure • Snowflake/Redshift</div>
 
       </div>
+
+
+        {/* RIGHT SIDE PHOTO */}
+        <div className="heroImage">
+          <Image
+            src="/profile.jpg"
+            alt="Leela Krishna Koppolu"
+            width={380}
+            height={420}
+            className="profileImage"
+            priority
+          />
+        </div>
+    </div>
+      
 
       <div className="ctaRow">
         <Link className="btn btnPrimary" href="/projects">
@@ -90,7 +123,7 @@ export default function HomePage() {
         <section className="card col4">
           <h2>Quick links</h2>
           <div className="split">
-            <a className="btn" href="https://linkedin.com/in/leelakrishnakoppolu/" target="_blank" rel="noopener noreferrer">
+            <a className="btn" href="https://www.linkedin.com/in/leela-krishna-klk" target="_blank" rel="noopener noreferrer">
               LinkedIn 
             </a>
             <a className="btn" href="https://github.com/KoppoluLeelaKrishna" target="_blank" rel="noopener noreferrer">

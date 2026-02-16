@@ -134,19 +134,15 @@ body {
   border-color: rgba(255, 255, 255, 0.18);
 }
 
-.aiGrid {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(120, 255, 253, 0.1), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(120, 255, 224, 0.1), transparent 35%),
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: auto, auto, 48px 48px, 48px 48px;
-  opacity: 0.75;
-  filter: blur(0px);
+.heroContainer,
+.heroWrap,
+.heroLeft,
+.heroRight {
+  position: relative;
+  z-index: 2;
 }
+
+
 
 @media (max-width: 600px) {
   .heroHighlights {
@@ -156,6 +152,7 @@ body {
 
 /* ===== AI GRID BACKGROUND ===== */
 
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -164,22 +161,33 @@ body {
 .aiGrid {
   position: absolute;
   inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.75;
+
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.29) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
+    radial-gradient(circle at 20% 20%, rgba(120, 255, 253, 0.1), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(120, 255, 224, 0.1), transparent 35%),
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+
+  background-size: auto, auto, 48px 48px, 48px 48px;
 
   -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
   mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
-
-  z-index: 0;
 }
 
 
 .hero > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
+
+.photoCard {
+  position: relative;
+  z-index: 3;
+}
+
 
 .ctaRow {
   display: flex;
@@ -230,4 +238,121 @@ body {
 .badge:hover {
   background: rgba(255, 255, 255, 0.12);
   transform: translateY(-2px);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  outline: none;
+}
+
+.input:focus {
+  border-color: rgba(255,255,255,0.22);
+}
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+}
+
+.heroContent {
+  flex: 1;
+}
+
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profileImage {
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.03);
+}
+
+.heroImage::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(0,140,255,0.25), transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: -1;
+}
+
+@media (max-width: 900px) {
+  .heroContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .heroImage {
+    margin-top: 40px;
+  }
+}
+
+
+.chatWrap {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.chatInput {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(10, 12, 18, 0.6);
+  color: var(--text);
+  outline: none;
+}
+
+.chatInput:focus {
+  border-color: rgba(120,255,253,0.35);
+  box-shadow: 0 0 0 4px rgba(120,255,253,0.08);
+}
+
+.chatBtn {
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(20, 24, 34, 0.85);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.chatBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.chatError {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,0,0,0.20);
+  background: rgba(255,0,0,0.08);
+}
+
+.chatAnswer {
+  white-space: pre-wrap;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
 }
