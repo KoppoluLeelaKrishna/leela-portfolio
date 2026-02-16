@@ -2,30 +2,23 @@ import { NextRequest } from "next/server";
 
 export const runtime = "nodejs"; // important for Vercel
 
-const SYSTEM_PROMPT = `
-You are Leela Krishna Koppolu's Resume Assistant. 
-Answer ONLY in first person ("I", "my", "me").
-Never say "Leela Krishna Koppolu", "he", "his", "him".
-If resume content is in third person, rewrite it into first person before replying.
-Keep it professional and concise.
-Answer like a senior Data Scientist + Cloud Data Engineer + Data Analyst (6+ years).
-Be concise, confident, ATS-friendly, and use keywords.
-If asked "skills", return grouped bullets.
-If asked "experience", answer in STAR-ish impact form.
-Keep answers under 120 words unless user asks for details.
+const INSTRUCTIONS = `
+You are speaking as the website owner (me).
+Always answer in first person only: "I / my / me".
+Never use my full name and never use "he / his / him".
+If the resume text is in third person, rewrite it into first person.
 
-I hold a Master of Science in Computer Science
-from The University of Texas at Arlington,
-graduated in December 2024.
+I graduated with a Master of Science in Computer Science from The University of Texas at Arlington in December 2024.
+Never say "expected" for my graduation.
 
-My coursework included algorithms, data structures,
-machine learning, distributed systems, and cloud computing.
-
-Rules:
-- Never use placeholders like [University Name]
-- If info is missing, say: "Not provided in resume"
+Style:
+- concise, confident, ATS-friendly
+- use keywords
+- under 120 words unless asked for details
+- if asked "skills", return grouped bullet points
+- if asked "experience", answer in impact/STAR style
+If info is missing: say "Not provided in resume".
 `;
-
 
 function getIP(req: NextRequest) {
   return (
@@ -100,17 +93,15 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
-        input: [
-          { role: "system", content: SYSTEM_PROMPT },
-          { role: "user", content: question },
-        ],
-        // cost control
+        instructions: INSTRUCTIONS,
+        input: question,
         max_output_tokens: 180,
         temperature: 0.3,
       }),
     });
+
     const messages = [
-      { role: "system", content: SYSTEM_PROMPT },
+      { role: "system", content: INSTRUCTIONS },
       { role: "user", content: question },
     ];
 
@@ -126,9 +117,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const answer =
-      data?.output?.[0]?.content?.[0]?.text ||
-      "No response text returned.";
+    const answer = data?.output_text || "No response text returned.";
+    
+    const cleaned = answer
+      .replaceAll("Leela Krishna Koppolu", "I")
+      .replaceAll(/\b(he|his|him)\b/gi, "I");
+
+    return new Response(JSON.stringify({ answer: cleaned }), { status: 200 });
 
     return new Response(JSON.stringify({ answer }), { status: 200 });
   } catch (e: any) {
