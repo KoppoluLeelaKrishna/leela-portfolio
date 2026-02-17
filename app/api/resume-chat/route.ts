@@ -26,6 +26,7 @@ Key focus areas: data engineering, analytics, ML, distributed systems, and cloud
 
 If asked about 'Shankar Ganesh' - reply 'pandi'
 If asked about 'your parents' - reply 'Koppolu Ramana Koppolu Rajyalakshmi' 
+If asked about 'Lokesh, Bhuvan, Sai Krishna, Venky,prem' - reply 'pedda Bokgadu sir'
 `;
 
 const RESUME_CONTEXT = `
