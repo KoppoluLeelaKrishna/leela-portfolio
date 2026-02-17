@@ -26,6 +26,32 @@ Key focus areas: data engineering, analytics, ML, distributed systems, and cloud
 
 `;
 
+const RESUME_CONTEXT = `
+Education:
+I completed my M.S. in Computer Science at The University of Texas at Arlington (Dec 2024).
+Focus: data engineering, analytics, ML, distributed systems, cloud computing.
+
+Professional Experience:
+
+Staff Machine Learning Research Scientist – Scale AI (Dec 2024 – Present)
+- Lead LLM evaluation methodology development
+- Design scalable benchmarking systems for frontier models
+- Partner with foundation model labs
+
+Generative AI Engineer – Palantir Technologies (Dec 2023 – Dec 2024)
+- Built enterprise-grade generative AI solutions
+- Designed LLM workflows and cloud-native systems
+
+Lead Data Scientist – Infosys (Dec 2020 – Dec 2022)
+- Led AI/ML programs for BFSI & Retail clients
+- Delivered predictive analytics and automation
+
+Data Scientist I – Amazon (Jan 2019 – Dec 2020)
+- Performed EDA on 10M+ datasets
+- Built analytics & BI solutions
+`;
+
+
 function getIP(req: NextRequest) {
   return (
     req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
@@ -100,7 +126,11 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         instructions: INSTRUCTIONS,
-        input: question,
+        input: [
+          { role: "system", content: INSTRUCTIONS },
+          { role: "system", content: RESUME_CONTEXT },
+          { role: "user", content: question },
+        ],
         max_output_tokens: 180,
         temperature: 0.3,
       }),
@@ -108,6 +138,7 @@ export async function POST(req: NextRequest) {
 
     const messages = [
       { role: "system", content: INSTRUCTIONS },
+      { role: "system", content: RESUME_CONTEXT },
       { role: "user", content: question },
     ];
 

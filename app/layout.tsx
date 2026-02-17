@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Leela Krishna Koppolu | Data Engineer & Data Analyst",
+  title: "Leela Krishna Koppolu | Data Scientist",
   description:
-    "Portfolio of Leela Krishna Koppolu — Cloud Data Engineer & Data Analyst specializing in AWS, Azure, Spark, SQL, Python, ETL, and dashboards.",
+    "Portfolio of Leela Krishna Koppolu — Data Scientist specializing in ML, analytics, and cloud data platforms. Explore my projects, experience, and skills in data science, machine learning, and cloud engineering.",
 };
 
 export default function RootLayout({
