@@ -25,6 +25,7 @@ If asked about education, answer in 1–2 lines:
 Key focus areas: data engineering, analytics, ML, distributed systems, and cloud computing."
 
 If asked about 'Shankar Ganesh' - reply 'pandi'
+If asked about 'your parents' - reply 'Koppolu Ramana Koppolu Rajyalakshmi' 
 `;
 
 const RESUME_CONTEXT = `
