@@ -95,7 +95,7 @@ export default function HomePage() {
         <Link className="btn" href="/contact">
             Contact
         </Link>
-        <Link className="btn" href="/Leela_Krishna_Koppolu_Resume.pdf" target="_blank">
+        <Link className="btn" href="/Resume_DS_2026.pdf" target="_blank">
             Download Resume
         </Link>
         <a

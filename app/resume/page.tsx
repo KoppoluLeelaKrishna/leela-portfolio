@@ -6,12 +6,12 @@ export default function ResumePage() {
 
       <div className="card">
         <div className="ctaRow">
-          <a className="btn" href="/Leela_Krishna_Koppolu_Resume.pdf" download>
+          <a className="btn" href="/Resume_DS_2026.pdf" download>
             Download Resume
           </a>
           <a
             className="btn"
-            href="/Leela_Krishna_Koppolu_Resume.pdf"
+            href="/Resume_DS_2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
