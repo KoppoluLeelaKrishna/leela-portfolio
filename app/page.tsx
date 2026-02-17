@@ -29,32 +29,8 @@ export default function HomePage() {
           </div>
 
 
-        
 
-        {/* RIGHT SIDE PHOTO */}
-        <div className="heroImage">
-          <Image
-            src="/profile.jpg"
-            alt="Leela Krishna Koppolu"
-            width={380}
-            height={420}
-            className="profileImage"
-            priority
-          />
-        </div>
-
-        <div className="grid" style={{ marginTop: 24 }}>
-          <section className="card col12">
-            <h2>Ask my Resume (AI)</h2>
-            <p className="sub">
-              Ask anything about my skills, projects, or experience — instant answers.
-            </p>
-            <ResumeChat />
-          </section>
-        </div>
-
-
-    <div className="aiGrid" />
+      <div className="aiGrid" />
 
       <h1 className="heroTitle">
         Engineering Intelligent Data Systems That Power Analytics & Decision Science
@@ -79,7 +55,33 @@ export default function HomePage() {
       </div>
 
 
-       
+
+        
+
+        {/* RIGHT SIDE PHOTO */}
+        <div className="heroImage">
+          <Image
+            src="/profile.jpg"
+            alt="Leela Krishna Koppolu"
+            width={380}
+            height={420}
+            className="profileImage"
+            priority
+          />
+        </div>
+
+        <div className="grid" style={{ marginTop: 24 }}>
+          <section className="card col12">
+            <h2> 'Nani AI' - My Intelligent Assistant</h2>
+            <p className="sub">
+              Ask anything about my skills, projects, or experience — instant answers.
+            </p>
+            <ResumeChat />
+          </section>
+        </div>
+
+
+    
     </div>
       
 
