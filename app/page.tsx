@@ -28,6 +28,21 @@ export default function HomePage() {
             <strong> Data Scientist • Data Engineer • Data Analyst</strong>
           </div>
 
+
+        
+
+        {/* RIGHT SIDE PHOTO */}
+        <div className="heroImage">
+          <Image
+            src="/profile.jpg"
+            alt="Leela Krishna Koppolu"
+            width={380}
+            height={420}
+            className="profileImage"
+            priority
+          />
+        </div>
+
         <div className="grid" style={{ marginTop: 24 }}>
           <section className="card col12">
             <h2>Ask my Resume (AI)</h2>
@@ -64,17 +79,7 @@ export default function HomePage() {
       </div>
 
 
-        {/* RIGHT SIDE PHOTO */}
-        <div className="heroImage">
-          <Image
-            src="/profile.jpg"
-            alt="Leela Krishna Koppolu"
-            width={380}
-            height={420}
-            className="profileImage"
-            priority
-          />
-        </div>
+       
     </div>
       
 

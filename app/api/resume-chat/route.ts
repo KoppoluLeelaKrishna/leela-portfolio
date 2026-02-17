@@ -18,6 +18,12 @@ Style:
 - if asked "skills", return grouped bullet points
 - if asked "experience", answer in impact/STAR style
 If info is missing: say "Not provided in resume".
+
+If asked about education, answer in 1–2 lines:
+"I completed my M.S. in Computer Science at The University of Texas at Arlington (Dec 2024). 
+Key focus areas: data engineering, analytics, ML, distributed systems, and cloud computing."
+
+
 `;
 
 function getIP(req: NextRequest) {
