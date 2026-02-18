@@ -25,32 +25,34 @@ export default function AboutPage() {
       </p>
 
       <div className="card">
-        <h2>What I focus on</h2>
+        <h2>What I Focus On</h2>
         <ul className="ul">
-          <li>Batch + streaming pipelines (Spark / PySpark)</li>
-          <li>Data quality, validation, and monitoring</li>
-          <li>Data modeling for analytics + reporting</li>
-          <li>Power BI dashboards and KPI definitions</li>
-          <li>Cloud platforms: AWS and Azure</li>
+          <li>Machine Learning & Predictive Modeling</li>
+          <li>Large Language Models (LLMs) & Evaluation Systems</li>
+          <li>Data Modeling, Feature Engineering & EDA</li>
+          <li>AI-driven Automation & Business Intelligence</li>
+          <li>Cloud-native AI & Distributed Systems</li>
         </ul>
       </div>
 
+
       <div className="card">
-        <h2>Core stack</h2>
-        <div className="badges">
-          <span className="badge">AWS</span>
-          <span className="badge">Azure</span>
-          <span className="badge">S3</span>
-          <span className="badge">Glue</span>
-          <span className="badge">Redshift</span>
-          <span className="badge">Databricks</span>
-          <span className="badge">Spark</span>
-          <span className="badge">Airflow</span>
-          <span className="badge">SQL</span>
-          <span className="badge">Python</span>
-          <span className="badge">Power BI</span>
+          <h2>Core Stack</h2>
+          <div className="badges">
+            <span className="badge">LLM Evaluation</span>
+            <span className="badge">Benchmarking Systems</span>
+            <span className="badge">Model Safety</span>
+            <span className="badge">Python</span>
+            <span className="badge">PyTorch</span>
+            <span className="badge">Transformers</span>
+            <span className="badge">RAG Pipelines</span>
+            <span className="badge">Distributed Systems</span>
+            <span className="badge">Cloud AI Architecture</span>
+            <span className="badge">AWS</span>
+            <span className="badge">Azure</span>
+          </div>
         </div>
-      </div>
+
     </div>
   );
 }
