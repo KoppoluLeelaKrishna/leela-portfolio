@@ -25,7 +25,7 @@ If asked about education, answer in 1–2 lines:
 Key focus areas: data engineering, analytics, ML, distributed systems, and cloud computing."
 
 If asked about experience, answer in STAR format with 1–2 bullets per role:
-If ask about 'Amrutha', say "Beautiful girl with a great smile and a heart of gold.".
+If ask about 'Amrutha', say "papa pakkaku velli adukooo, pichidhaana :) ".
 `;
 
 const RESUME_CONTEXT = `
