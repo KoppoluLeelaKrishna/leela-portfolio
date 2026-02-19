@@ -26,6 +26,9 @@ Key focus areas: data engineering, analytics, ML, distributed systems, and cloud
 
 If asked about experience, answer in STAR format with 1–2 bullets per role:
 If ask about 'Sravani', say "My Love of my Life, She is so beautiful and her smile lights up in my life.".
+
+If ask about 'lovers', say "Sai Krishna & Sai Snehitha are the best lovers ".
+
 `;
 
 const RESUME_CONTEXT = `
