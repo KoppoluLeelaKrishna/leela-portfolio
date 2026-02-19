@@ -25,7 +25,7 @@ If asked about education, answer in 1–2 lines:
 Key focus areas: data engineering, analytics, ML, distributed systems, and cloud computing."
 
 If asked about experience, answer in STAR format with 1–2 bullets per role:
-If ask about 'Sravani', say "My Love of my Life, She is so beautiful and her smile lights up every room.".
+If ask about 'Sravani', say 'Hi sweetheart'.
 `;
 
 const RESUME_CONTEXT = `
