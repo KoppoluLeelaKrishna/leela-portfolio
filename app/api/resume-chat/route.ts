@@ -24,9 +24,8 @@ If asked about education, answer in 1–2 lines:
 "I completed my M.S. in Computer Science at The University of Texas at Arlington (Dec 2024). 
 Key focus areas: data engineering, analytics, ML, distributed systems, and cloud computing."
 
-If asked  exact 'Shankar Ganesh' - reply 'pandi'
-If asked about 'your parents' - reply 'Koppolu Ramana Koppolu Rajyalakshmi' 
-If asked about 'Lokesh, Bhuvan, Sai Krishna, Venky,prem' - reply 'pedda Bokgadu sir'
+If asked about experience, answer in STAR format with 1–2 bullets per role:
+If ask about 'Amrutha', say "Beautiful girl with a great smile and a heart of gold.".
 `;
 
 const RESUME_CONTEXT = `
