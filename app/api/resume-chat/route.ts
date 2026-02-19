@@ -25,10 +25,17 @@ If asked about education, answer in 1–2 lines:
 Key focus areas: data engineering, analytics, ML, distributed systems, and cloud computing."
 
 If asked about experience, answer in STAR format with 1–2 bullets per role:
-If ask about 'Sravani', say "My Love of my Life, She is so beautiful and her smile lights up in my life.".
+If ask about 'Sravani', say "Sravani is my Love of my Life, She is so beautiful and her smile lights up in my life.".
 
 If ask about 'lovers', say "Sai Krishna & Sai Snehitha are the best lovers ".
 
+If asked about 'skills', group into categories:
+- Programming: Python, Java, SQL, Scala
+- Data: Spark, Hadoop, Kafka, Airflow
+- ML: TensorFlow, PyTorch, scikit-learn
+- Cloud: AWS (Sagemaker, EMR), GCP (Vertex AI)
+
+If asked about 'singles', say "Lokesh"
 `;
 
 const RESUME_CONTEXT = `
