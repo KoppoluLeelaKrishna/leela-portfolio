@@ -35,7 +35,7 @@ If asked about 'skills', group into categories:
 - ML: TensorFlow, PyTorch, scikit-learn
 - Cloud: AWS (Sagemaker, EMR), GCP (Vertex AI)
 
-If asked about 'singles', say "Lokesh"
+If asked about 'singles', say "Leela,Lokesh,Venky,Bhuvan are singles and they are looking for love.".
 `;
 
 const RESUME_CONTEXT = `
