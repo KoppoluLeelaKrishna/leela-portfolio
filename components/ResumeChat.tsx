@@ -48,11 +48,11 @@ export default function ResumeChat() {
     <div className="naniShell">
       <div className="naniIntro">
         <div>
-          <p className="eyebrow">Nani AI</p>
+          <p className="eyebrow">ASSIST AI</p>
           <h3 className="naniTitle">Recruiter-ready portfolio assistant</h3>
         </div>
         <p className="naniBody">
-          Ask about skills, experience, projects, cloud platforms, or current focus areas. Nani AI answers in a
+          Ask about skills, experience, projects, cloud platforms, or current focus areas. ASSIST AI answers in a
           professional, job-focused format tailored for recruiters and hiring managers.
         </p>
       </div>
@@ -76,7 +76,7 @@ export default function ResumeChat() {
 
       <div className="chatWrap">
         <label className="chatLabel" htmlFor="nani-question">
-          Ask Nani AI
+          Ask ASSIST AI
         </label>
         <textarea
           id="nani-question"
@@ -94,7 +94,7 @@ export default function ResumeChat() {
 
         <div className="chatActions">
           <button type="button" className="chatBtn" onClick={() => void ask()} disabled={loading}>
-            {loading ? "Nani AI is responding..." : "Ask Nani AI"}
+            {loading ? "ASSIST AI is responding..." : "Ask ASSIST AI"}
           </button>
           <span className="chatHint">Best for recruiter summaries, skills, projects, and current work.</span>
         </div>
@@ -108,7 +108,7 @@ export default function ResumeChat() {
               <p>{q}</p>
             </div>
             <div className="chatBubble chatBubbleAssistant">
-              <span className="bubbleLabel">Nani AI</span>
+              <span className="bubbleLabel">ASSIST AI</span>
               <div className="chatAnswer">{ans}</div>
             </div>
           </div>

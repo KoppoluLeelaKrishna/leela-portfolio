@@ -214,7 +214,7 @@ export default function HomePage() {
 
       <section className="section">
         <div className="sectionIntro">
-          <p className="eyebrow">Nani AI</p>
+          <p className="eyebrow">ASSIST AI</p>
           <h2 className="sectionTitle">Ask my recruiter-facing assistant for a fast, professional summary.</h2>
         </div>
         <div className="infoCard">

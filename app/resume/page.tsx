@@ -47,7 +47,7 @@ export default function ResumePage() {
 
       <section className="section">
         <div className="sectionIntro">
-          <p className="eyebrow">Nani AI</p>
+          <p className="eyebrow">ASSIST AI</p>
           <h2 className="sectionTitle">A premium recruiter-facing assistant for skills, projects, and experience questions.</h2>
         </div>
         <div className="infoCard">
