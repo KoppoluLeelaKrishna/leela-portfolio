@@ -9,15 +9,15 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Enterprise ETL Platform — AWS (S3 • Glue • Spark • Redshift)",
-    timeframe: "Data Engineering",
+    title: "Enterprise ETL Platform - AWS Data Pipelines",
+    timeframe: "Walmart / Truist Experience",
     description:
-      "Built automated batch pipelines for analytics-ready datasets with strong data quality + performance tuning.",
+      "Built and supported cloud ETL workflows that delivered analytics-ready datasets for enterprise reporting.",
     tech: ["S3", "Glue", "Spark", "Redshift", "Athena", "Python", "SQL"],
     bullets: [
-      "Automated ingestion + transformation workflows; reduced manual effort by ~60% through scheduling + reusable jobs.",
-      "Improved pipeline reliability using validation checks + retry patterns; minimized broken dashboard incidents.",
-      "Optimized ETL runtime using partitioning + join tuning; improved daily refresh performance significantly.",
+      "Designed ingestion and transformation workflows for scalable batch data processing.",
+      "Improved pipeline reliability with monitoring, validation checks, and dependency-aware scheduling.",
+      "Delivered curated datasets that supported downstream reporting, analytics, and business decision-making.",
     ],
     links: [
       { label: "GitHub", href: "https://github.com/KoppoluLeelaKrishna" },
@@ -25,33 +25,32 @@ const projects: Project[] = [
     ],
   },
   {
-    title: "Data Quality Framework — Rules + Alerts",
-    timeframe: "Quality + Monitoring",
+    title: "Data Quality and Workflow Monitoring",
+    timeframe: "ETL Operations",
     description:
-      "Created a reusable data quality layer for pipelines to catch schema drift, null spikes, and duplicate records.",
-    tech: ["Python", "SQL", "Great Expectations (optional)", "CloudWatch", "Airflow"],
+      "Implemented validation and monitoring patterns to keep production data pipelines stable and trustworthy.",
+    tech: ["Python", "SQL", "Airflow", "CloudWatch", "Data Validation"],
     bullets: [
-      "Implemented validation rules (null %, duplicates, schema checks) before loading curated tables.",
-      "Added alerting for failures to reduce debugging time and speed up recovery during data issues.",
-      "Standardized error outputs (quarantine tables/logs) to make root-cause analysis faster.",
+      "Supported pipeline scheduling, monitoring, and failure handling for recurring enterprise jobs.",
+      "Applied data validation and quality checks before publishing curated outputs.",
+      "Reduced reporting disruption by strengthening dependency handling and operational visibility.",
     ],
     links: [{ label: "GitHub", href: "https://github.com/KoppoluLeelaKrishna" }],
   },
   {
-    title: "KPI Dashboards — Power BI + Star Schema",
-    timeframe: "Analytics",
+    title: "Analytics Reporting and Business Data Modeling",
+    timeframe: "Reporting Support",
     description:
-      "Designed stakeholder dashboards with consistent KPI definitions and refresh-friendly modeling.",
+      "Prepared transformed data models and reporting-friendly tables for stakeholder analytics and dashboards.",
     tech: ["Power BI", "SQL", "Data Modeling", "Python"],
     bullets: [
-      "Built star-schema reporting model; improved refresh stability and simplified KPI calculations.",
-      "Created executive-level KPI views with trend + variance insights to support decision making.",
-      "Documented metric definitions so business teams trust the numbers and reduce back-and-forth.",
+      "Built reporting-ready datasets with consistent transformations and business logic.",
+      "Supported analytics consumers with stable schemas and refresh-friendly data structures.",
+      "Connected engineering work to measurable business reporting needs across teams.",
     ],
     links: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/leela-krishna-klk/" }],
   },
 ];
-
 
 function ProjectCard({ p }: { p: Project }) {
   return (
@@ -86,7 +85,7 @@ function ProjectCard({ p }: { p: Project }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {l.label} ↗
+            {l.label}
           </a>
         ))}
       </div>
@@ -99,9 +98,8 @@ export default function ProjectsPage() {
     <div>
       <h1 className="h1">Projects</h1>
       <p className="sub">
-        A few projects highlighting my work across cloud pipelines, analytics,
-        and automation. Replace the placeholder links with your GitHub, demos,
-        and screenshots.
+        A few representative project areas based on my resume, covering cloud
+        pipelines, data quality, and analytics delivery.
       </p>
 
       <h2 className="sectionTitle">Featured</h2>

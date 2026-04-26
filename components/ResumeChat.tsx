@@ -27,8 +27,8 @@ export default function ResumeChat() {
       } else {
         setAns(data.answer);
       }
-    } catch (e: any) {
-      setErr(e?.message || "Network error");
+    } catch (e: unknown) {
+      setErr(e instanceof Error ? e.message : "Network error");
     } finally {
       setLoading(false);
     }

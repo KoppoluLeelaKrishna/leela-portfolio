@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 
-export const runtime = "nodejs"; // important for Vercel
+export const runtime = "nodejs";
 
 const INSTRUCTIONS = `
 answer with STAR format: Situation, Task, Action, Result. Focus on impact and outcomes.
@@ -20,51 +20,42 @@ Style:
 - if asked "experience", answer in impact/STAR style
 If info is missing: say "Sorry ask related to resume :)".
 
-If asked about education, answer in 1–2 lines:
-"I completed my M.S. in Computer Science at The University of Texas at Arlington (Dec 2024). 
+If asked about education, answer in 1-2 lines:
+"I completed my M.S. in Computer Science at The University of Texas at Arlington (Dec 2024).
 Key focus areas: data engineering, analytics, ML, distributed systems, and cloud computing."
 
-If asked about experience, answer in STAR format with 1–2 bullets per role:
-If ask about 'Sravani', say "Sravani is my Love of my Life, She is so beautiful and her smile lights up in my life.".
+If asked about experience, answer in STAR format with 1-2 bullets per role.
 
-If asked about 'Nope', say "Nope is a Nope, which is amrutha Nope not the ammu nope. So NOPE".
-
-
-If asked about 'skills', group into categories:
-- Programming: Python, Java, SQL, Scala
-- Data: Spark, Hadoop, Kafka, Airflow
-- ML: TensorFlow, PyTorch, scikit-learn
-- Cloud: AWS (Sagemaker, EMR), GCP (Vertex AI)
+If asked about "skills", group into categories:
+- Programming: Python, SQL
+- Data: PySpark, Airflow, Databricks, Snowflake, Data Modeling
+- Cloud: AWS, Azure
+- Analytics: ETL / ELT, Reporting Support, Pipeline Monitoring
 `;
 
 const RESUME_CONTEXT = `
 answer with STAR format: Situation, Task, Action, Result. Focus on impact and outcomes.
 Education:
 I completed my M.S. in Computer Science at The University of Texas at Arlington (Dec 2024).
-Focus: data engineering, analytics, ML, distributed systems, cloud computing.
+Focus: data engineering, analytics, distributed systems, and cloud computing.
 
 Professional Experience:
 
-Staff Machine Learning Research Scientist – Scale AI (Dec 2024 – Present)
-- Lead LLM evaluation methodology development
-- Design scalable benchmarking systems for frontier models
-- Partner with foundation model labs
+Data Engineer - Walmart (Dec 2024 - Present)
+- Build and maintain AWS-based data pipelines and ETL workflows
+- Use PySpark, SQL, Airflow, Databricks, and Snowflake
+- Deliver analytics-ready datasets and reporting support
 
-Generative AI Engineer – Palantir Technologies (Dec 2023 – Dec 2024)
-- Built enterprise-grade generative AI solutions
-- Designed LLM workflows and cloud-native systems
+Information Engineer Intern - Truist (Mar 2023 - Nov 2023)
+- Supported AWS ETL development and pipeline monitoring
+- Worked on scheduling, validation, and dependency handling
+- Helped deliver business-ready datasets for reporting
 
-Lead Data Scientist – Infosys (Dec 2020 – Dec 2022)
-- Led AI/ML programs for BFSI & Retail clients
-- Delivered predictive analytics and automation
-
-Data Scientist I – Amazon (Jan 2019 – Dec 2020)
-- Performed EDA on 10M+ datasets
-- Built analytics & BI solutions
-
-
+Software Engineer - Infosys (Jan 2021 - Dec 2022)
+- Worked in a data engineering-focused role across AWS and Azure
+- Built ETL workflows, integration pipelines, and PySpark transformations
+- Supported reporting and analytics data needs
 `;
-
 
 function getIP(req: NextRequest) {
   return (
@@ -74,10 +65,9 @@ function getIP(req: NextRequest) {
   );
 }
 
-// Simple in-memory rate limit (works fine for small portfolio traffic)
 const RATE: Record<string, { count: number; ts: number }> = {};
-const WINDOW_MS = 60_000; // 1 minute
-const MAX_REQ = 10; // 10 requests per minute per IP
+const WINDOW_MS = 60_000;
+const MAX_REQ = 10;
 
 function rateLimit(ip: string) {
   const now = Date.now();
@@ -88,7 +78,10 @@ function rateLimit(ip: string) {
     return { ok: true };
   }
 
-  if (entry.count >= MAX_REQ) return { ok: false };
+  if (entry.count >= MAX_REQ) {
+    return { ok: false };
+  }
+
   entry.count += 1;
   return { ok: true };
 }
@@ -104,11 +97,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-     const origin = req.headers.get("origin") || "";
-    if (
-      !origin.includes("vercel.app") &&
-      !origin.includes("localhost")
-    ) {
+    const origin = req.headers.get("origin") || "";
+    if (!origin.includes("vercel.app") && !origin.includes("localhost")) {
       return new Response(
         JSON.stringify({ error: "Unauthorized origin" }),
         { status: 401 }
@@ -130,7 +120,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ✅ Use Responses API (recommended). Works with GPT-4.1-mini / GPT-4o-mini.
     const resp = await fetch("https://api.openai.com/v1/responses", {
       method: "POST",
       headers: {
@@ -150,13 +139,6 @@ export async function POST(req: NextRequest) {
       }),
     });
 
-    const messages = [
-      { role: "system", content: INSTRUCTIONS },
-      { role: "system", content: RESUME_CONTEXT },
-      { role: "user", content: question },
-    ];
-
-
     const data = await resp.json();
 
     if (!resp.ok) {
@@ -173,17 +155,13 @@ export async function POST(req: NextRequest) {
       data.output?.[0]?.content?.[0]?.text ||
       "No response text returned.";
 
-
-    
     const cleaned = answer
       .replaceAll("Leela Krishna Koppolu", "I")
       .replaceAll(/\b(he|his|him)\b/gi, "I");
 
     return new Response(JSON.stringify({ answer: cleaned }), { status: 200 });
-
-    return new Response(JSON.stringify({ answer }), { status: 200 });
-  } catch (e: any) {
-    return new Response(JSON.stringify({ error: e?.message || "Server error" }), {
+  } catch (e: unknown) {
+    return new Response(JSON.stringify({ error: e instanceof Error ? e.message : "Server error" }), {
       status: 500,
     });
   }

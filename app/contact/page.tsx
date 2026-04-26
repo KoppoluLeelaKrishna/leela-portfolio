@@ -3,7 +3,7 @@ export default function ContactPage() {
     <div>
       <h1 className="h1">Contact</h1>
       <p className="sub">
-        Want to collaborate or discuss a role? Reach out — I reply quickly.
+        Want to discuss a data engineering role, collaboration, or project opportunity? Reach out.
       </p>
 
       <div className="card">
@@ -19,7 +19,7 @@ export default function ContactPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn ↗
+            LinkedIn
           </a>
 
           <a
@@ -28,12 +28,12 @@ export default function ContactPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub ↗
+            GitHub
           </a>
         </div>
 
         <p className="sub" style={{ marginTop: 12 }}>
-          Update the LinkedIn URL to your real profile.
+          Dallas, Texas, USA | Open to opportunities and relocation.
         </p>
       </div>
     </div>
