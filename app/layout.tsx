@@ -1,29 +1,43 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import Nav from "@/components/Nav";
 
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "Leela Krishna Koppolu | Data Scientist",
+  title: "Leela Krishna Koppolu | Data Engineer Portfolio",
   description:
-    "Portfolio of Leela Krishna Koppolu — Data Scientist specializing in ML, analytics, and cloud data platforms. Explore my projects, experience, and skills in data science, machine learning, and cloud engineering.",
+    "Recruiter-focused data engineer portfolio featuring AWS and Azure pipelines, PySpark ETL delivery, workflow orchestration, analytics-ready data products, and enterprise reporting support.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body>
-        <Nav />
-        <main className="container">{children}</main>
-        <footer className="footer">
-          <div className="footerInner">
-            <span>© {new Date().getFullYear()} Leela Krishna Koppolu</span>
-            <span className="muted">Built with Next.js</span>
-          </div>
-        </footer>
+      <body className={`${jakarta.variable} ${cormorant.variable}`}>
+        <div className="siteShell">
+          <Nav />
+          <main className="container">{children}</main>
+          <footer className="footer">
+            <div className="footerInner">
+              <span>&copy; {new Date().getFullYear()} Leela Krishna Koppolu</span>
+              <span className="muted">Data Engineer based in Dallas, Texas</span>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );

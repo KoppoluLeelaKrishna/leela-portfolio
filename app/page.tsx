@@ -1,212 +1,234 @@
-import Link from "next/link";
 import Image from "next/image";
-import ResumeChat from "@/components/ResumeChat";
+import Link from "next/link";
 
-const skills = [
-  "AWS (S3, Glue, Redshift, Athena, Lambda)",
-  "Azure (ADLS, Databricks, Synapse)",
-  "PySpark",
-  "SQL",
-  "ETL / ELT",
-  "Airflow",
-  "Databricks",
-  "Snowflake",
-  "Data Pipelines",
-  "Data Modeling",
-  "Data Ingestion",
-  "Data Transformation",
-  "Workflow Orchestration",
-  "Pipeline Optimization",
-  "Reporting Support",
-  "Power BI",
+const recruiterSignals = [
+  "4+ years across data engineering, ETL delivery, and analytics support",
+  "Enterprise experience spanning Walmart, Truist, and Infosys",
+  "AWS, Azure, PySpark, SQL, Airflow, Databricks, and Snowflake",
+  "M.S. in Computer Science from The University of Texas at Arlington",
+];
+
+const priorityCards = [
+  {
+    title: "Production reliability",
+    body: "Focused on stable scheduled pipelines, validation checkpoints, and recurring delivery that reporting teams can trust.",
+  },
+  {
+    title: "Cloud platform range",
+    body: "Comfortable operating across AWS and Azure environments depending on enterprise stack, governance, and team needs.",
+  },
+  {
+    title: "Business alignment",
+    body: "Work is shaped around reporting readiness, downstream usability, and clear handoff to analytics consumers.",
+  },
+  {
+    title: "Practical engineering judgment",
+    body: "Delivery style emphasizes maintainability, orchestration clarity, and clean transformation logic over unnecessary complexity.",
+  },
+];
+
+const experience = [
+  {
+    company: "Walmart",
+    role: "Data Engineer",
+    period: "Dec 2024 - Present",
+    body:
+      "Build and support AWS-based data pipelines, PySpark ETL workflows, and reporting-ready datasets using SQL, Airflow, Databricks, and Snowflake.",
+  },
+  {
+    company: "Truist",
+    role: "Information Engineer Intern",
+    period: "Mar 2023 - Nov 2023",
+    body:
+      "Supported ETL scheduling, monitoring, validation, and dependency management for business-facing datasets and recurring enterprise reporting.",
+  },
+  {
+    company: "Infosys",
+    role: "Software Engineer",
+    period: "Jan 2021 - Dec 2022",
+    body:
+      "Worked in a data-engineering-focused role across AWS and Azure, building integration pipelines, PySpark transformations, and analytics support workflows.",
+  },
+];
+
+const hiringChecklist = [
+  {
+    title: "Can step into enterprise data workflows",
+    detail: "Experience is already framed around production support, recurring data movement, and reporting-oriented outputs.",
+  },
+  {
+    title: "Understands enterprise tooling",
+    detail: "The portfolio highlights practical experience with cloud platforms, orchestration, transformation, and analytics-facing delivery.",
+  },
+  {
+    title: "Connects engineering work to business value",
+    detail: "The emphasis stays on reliability, analytics readiness, and usable outcomes instead of listing tools without context.",
+  },
+];
+
+const spotlightMetrics = [
+  { label: "Experience", value: "4+ years" },
+  { label: "Cloud focus", value: "AWS + Azure" },
+  { label: "Core stack", value: "PySpark, SQL, Airflow" },
+  { label: "Location", value: "Dallas, TX" },
 ];
 
 export default function HomePage() {
   return (
-    <div className="hero">
-      <div className="aiGrid" />
-
-      <div className="heroContent">
-        <div className="kicker">
-          <span>Open to:</span>
-          <strong> Data Engineer | Cloud Data Engineer | ETL Developer</strong>
-        </div>
-
-        <h1 className="heroTitle">
-          Building scalable data pipelines and cloud data platforms for analytics and business growth
-        </h1>
-
-        <p className="heroSub">
-          I am a Data Engineer with 4+ years of experience designing and supporting
-          cloud-based data pipelines, ETL workflows, and analytics systems using AWS and Azure.
-          I specialize in PySpark, SQL, Airflow, and distributed data processing to deliver
-          reliable, high-performance datasets for business decision-making.
-        </p>
-
-        <div className="heroHighlights">
-          <div className="pill">ETL / ELT | Batch Processing | Data Ingestion</div>
-          <div className="pill">PySpark | SQL | Airflow | Databricks</div>
-          <div className="pill">AWS | Azure | Snowflake | Reporting</div>
-          <div className="pill">Data Modeling | Validation | Pipeline Monitoring</div>
-        </div>
-
-        <div className="heroImage">
-          <Image
-            src="/profile.jpg"
-            alt="Leela Krishna Koppolu"
-            width={380}
-            height={420}
-            className="profileImage"
-            priority
-          />
-        </div>
-
-        <div className="grid" style={{ marginTop: 24 }}>
-          <section className="card col12">
-            <h2>&apos;Nani AI&apos; - My Intelligent Assistant</h2>
-            <p className="sub">
-              Ask anything about my data engineering skills, tools, projects, and experience.
-            </p>
-            <ResumeChat />
-          </section>
-        </div>
-      </div>
-
-      <div className="ctaRow">
-        <Link className="btn btnPrimary" href="/projects">
-          View Projects
-        </Link>
-        <Link className="btn" href="/resume">
-          Resume Page
-        </Link>
-        <Link className="btn" href="/contact">
-          Contact
-        </Link>
-        <Link
-          className="btn"
-          href="/Resume_Data%20Engineer_Leela%20Krishna%20Koppolu_2026.pdf"
-          target="_blank"
-        >
-          Download Resume
-        </Link>
-        <a
-          href="https://www.linkedin.com/in/leela-krishna-klk/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btnPrimary"
-        >
-          LinkedIn
-        </a>
-      </div>
-
-      <div className="grid">
-        <section className="card col8">
-          <h2>What I Focus On</h2>
-          <ul className="ul">
-            <li>Designing scalable ETL/ELT pipelines using PySpark and SQL</li>
-            <li>Batch data processing and workflow orchestration with Airflow</li>
-            <li>Data modeling and transformation for analytics and reporting</li>
-            <li>Cloud data platforms across AWS and Azure</li>
-            <li>Data quality, validation, and pipeline performance optimization</li>
-          </ul>
-        </section>
-
-        <section className="card col4">
-          <h2>Quick Links</h2>
-          <div className="split">
-            <a
-              className="btn"
-              href="https://www.linkedin.com/in/leela-krishna-klk"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-            <a
-              className="btn"
-              href="https://github.com/KoppoluLeelaKrishna"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-            <a className="btn" href="mailto:koppoluleelakrishna@gmail.com">
-              Email
-            </a>
-          </div>
-          <p className="itemMeta" style={{ marginTop: 10 }}>
-            Dallas, Texas, USA | Open to relocate
+    <div className="pageStack">
+      <section className="heroSection">
+        <div className="heroCopy">
+          <div className="eyebrow">Data engineer portfolio</div>
+          <div className="heroBadge">Open to data engineering and cloud pipeline roles</div>
+          <h1 className="heroTitle">
+            Professional data engineer focused on cloud pipelines, production ETL, and analytics-ready delivery.
+          </h1>
+          <p className="heroSub">
+            I build and support enterprise data workflows across AWS and Azure with hands-on experience in PySpark, SQL,
+            Airflow, Databricks, Snowflake, and reporting support. My work centers on reliable pipelines, scalable
+            transformation logic, and datasets that are ready for business use.
           </p>
-        </section>
 
-        <section className="card col12">
-          <h2>Core Skills</h2>
-          <div className="badges">
-            {skills.map((s) => (
-              <span className="badge" key={s}>
-                {s}
-              </span>
+          <div className="heroActions">
+            <a
+              className="btn btnPrimary"
+              href="/Resume_Data%20Engineer_Leela%20Krishna%20Koppolu_2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Resume
+            </a>
+            <a
+              className="btn"
+              href="https://www.linkedin.com/in/leela-krishna-klk/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View LinkedIn
+            </a>
+            <Link className="btn" href="/projects">
+              Review Projects
+            </Link>
+          </div>
+
+          <div className="metricsGrid">
+            {spotlightMetrics.map((item) => (
+              <div className="metricCard" key={item.label}>
+                <span className="metricValue">{item.value}</span>
+                <span className="metricLabel">{item.label}</span>
+              </div>
             ))}
           </div>
-        </section>
 
-        <section className="card col12">
-          <h2>Experience Snapshot</h2>
-          <div className="grid">
-            <div className="card col4">
-              <h3>Walmart</h3>
-              <p className="itemMeta">Data Engineer | Dec 2024 - Present</p>
-              <p>
-                Designing and maintaining AWS-based data pipelines, ETL workflows,
-                and reporting solutions using PySpark, SQL, Airflow, Databricks,
-                and Snowflake for scalable enterprise analytics.
-              </p>
+          <div className="signalList">
+            {recruiterSignals.map((item) => (
+              <div className="signalItem" key={item}>
+                <span className="signalDot" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside className="heroAside">
+          <div className="portraitCard">
+            <div className="portraitFrame">
+              <Image
+                src="/profile.jpg"
+                alt="Leela Krishna Koppolu"
+                width={420}
+                height={500}
+                className="profileImage"
+                priority
+              />
             </div>
-
-            <div className="card col4">
-              <h3>Truist</h3>
-              <p className="itemMeta">Information Engineer Intern | Mar 2023 - Nov 2023</p>
-              <p>
-                Supported AWS ETL development, pipeline monitoring, scheduling,
-                validation, dependency handling, and analytics-ready dataset
-                delivery for business reporting and analysis.
-              </p>
-            </div>
-
-            <div className="card col4">
-              <h3>Infosys</h3>
-              <p className="itemMeta">Software Engineer | Jan 2021 - Dec 2022</p>
-              <p>
-                Worked in a data engineering-focused role across AWS and Azure,
-                building ETL workflows, data integration pipelines, PySpark
-                transformations, and reporting support solutions.
-              </p>
+            <div className="portraitMeta">
+              <div>
+                <p className="metaLabel">Target roles</p>
+                <p className="metaValue">Data Engineer, Cloud Data Engineer, ETL Developer</p>
+              </div>
+              <div>
+                <p className="metaLabel">Location</p>
+                <p className="metaValue">Dallas, Texas with openness to relocation</p>
+              </div>
+              <div>
+                <p className="metaLabel">Education</p>
+                <p className="metaValue">M.S. Computer Science, UT Arlington</p>
+              </div>
             </div>
           </div>
-        </section>
+        </aside>
+      </section>
 
-        <section className="card col12">
-          <h2>Education</h2>
-          <p>
-            M.S. in Computer Science, The University of Texas at Arlington, completed
-            in December 2024. Focus areas included data engineering, analytics,
-            distributed systems, and cloud computing.
-          </p>
-        </section>
+      <section className="section">
+        <div className="sectionIntro">
+          <p className="eyebrow">Core strengths</p>
+          <h2 className="sectionTitle">The capabilities I bring to enterprise data engineering teams.</h2>
+        </div>
+        <div className="featureGrid">
+          {priorityCards.map((item) => (
+            <article className="featureCard" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <section className="card col12">
-          <h2>Professional Summary</h2>
-          <p>
-            Data Engineer with 4+ years of experience designing and supporting
-            cloud-based data pipelines, ETL workflows, and analytics solutions.
-            Experienced in AWS and Azure data engineering with strong hands-on
-            expertise in PySpark, SQL, Airflow, Databricks, and Snowflake.
-            Proven ability to build scalable data pipelines, optimize processing
-            performance, manage workflow orchestration, and deliver reliable
-            datasets for analytics, reporting, and business decision-making.
+      <section className="section">
+        <div className="sectionIntro">
+          <p className="eyebrow">Experience snapshot</p>
+          <h2 className="sectionTitle">Recent roles aligned with enterprise data engineering and analytics delivery.</h2>
+        </div>
+        <div className="timeline">
+          {experience.map((job) => (
+            <article className="timelineCard" key={job.company}>
+              <div className="timelineHeader">
+                <div>
+                  <h3>{job.company}</h3>
+                  <p className="roleLine">{job.role}</p>
+                </div>
+                <span className="timelinePeriod">{job.period}</span>
+              </div>
+              <p className="timelineBody">{job.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="sectionIntro">
+          <p className="eyebrow">Hiring fit</p>
+          <h2 className="sectionTitle">What hiring teams can confirm quickly from my background.</h2>
+        </div>
+        <div className="featureGrid">
+          {hiringChecklist.map((item) => (
+            <article className="projectPreview" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section recruiterCta">
+        <div>
+          <p className="eyebrow">Next step</p>
+          <h2 className="sectionTitle">Available for data engineering opportunities with teams building reliable cloud data platforms.</h2>
+          <p className="sectionBody">
+            Review the resume, project case studies, and contact page for the fastest qualification pass. If you want a
+            concise walkthrough of cloud pipelines, orchestration, or reporting support experience, contact me directly.
           </p>
-        </section>
-      </div>
+        </div>
+        <div className="heroActions">
+          <Link className="btn btnPrimary" href="/contact">
+            Contact Me
+          </Link>
+          <Link className="btn" href="/resume">
+            Resume Page
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

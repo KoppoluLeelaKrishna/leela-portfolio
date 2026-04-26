@@ -1,50 +1,63 @@
+const stack = [
+  "Python",
+  "PySpark",
+  "SQL",
+  "Airflow",
+  "Databricks",
+  "Snowflake",
+  "AWS",
+  "Azure",
+  "ETL / ELT",
+  "Data Modeling",
+  "Reporting Support",
+];
+
 export default function AboutPage() {
   return (
-    <div>
-      <h1 className="h1">About</h1>
+    <div className="pageStack">
+      <section className="pageHero">
+        <p className="eyebrow">About</p>
+        <h1 className="pageTitle">A data engineer with a delivery mindset, enterprise experience, and strong analytics alignment.</h1>
+        <p className="sectionBody narrow">
+          I focus on building dependable data workflows that move raw source data into curated, analytics-ready outputs.
+          My work is grounded in cloud platforms, operational stability, and business reporting needs.
+        </p>
+      </section>
 
-      <p className="sub">
-        I am a Data Engineer with 4+ years of experience building cloud-based data
-        pipelines, ETL workflows, and analytics-ready datasets. My work focuses on
-        scalable batch processing, workflow orchestration, data transformation, and
-        reporting support across AWS and Azure environments.
-      </p>
+      <section className="twoColSection">
+        <article className="infoCard">
+          <h2>How I work</h2>
+          <ul className="detailList">
+            <li>I design pipelines with downstream reporting and analytics users in mind.</li>
+            <li>I prioritize validation, scheduling reliability, and maintainable orchestration.</li>
+            <li>I work across AWS and Azure based on existing enterprise platforms and team context.</li>
+            <li>I translate business reporting requirements into practical, usable data structures.</li>
+          </ul>
+        </article>
 
-      <p className="sub">
-        I work primarily with PySpark, SQL, Airflow, Databricks, and Snowflake to
-        deliver reliable data products for business reporting and decision-making.
-        I completed my M.S. in Computer Science at The University of Texas at
-        Arlington in December 2024, with focus areas in data engineering,
-        distributed systems, analytics, and cloud computing.
-      </p>
+        <article className="infoCard">
+          <h2>Professional summary</h2>
+          <p className="sectionBody">
+            My background combines hands-on enterprise delivery with academic grounding in computer science. I completed my
+            M.S. in Computer Science at The University of Texas at Arlington in December 2024, with focus areas in data
+            engineering, analytics, distributed systems, and cloud computing.
+          </p>
+        </article>
+      </section>
 
-      <div className="card">
-        <h2>What I Focus On</h2>
-        <ul className="ul">
-          <li>Designing ETL and ELT pipelines for analytics and reporting</li>
-          <li>Building cloud-native data workflows on AWS and Azure</li>
-          <li>Transforming raw data into curated, business-ready datasets</li>
-          <li>Improving pipeline reliability, validation, and monitoring</li>
-          <li>Supporting scalable analytics platforms and stakeholder reporting</li>
-        </ul>
-      </div>
-
-      <div className="card">
-        <h2>Core Stack</h2>
-        <div className="badges">
-          <span className="badge">Python</span>
-          <span className="badge">PySpark</span>
-          <span className="badge">SQL</span>
-          <span className="badge">Airflow</span>
-          <span className="badge">Databricks</span>
-          <span className="badge">Snowflake</span>
-          <span className="badge">ETL / ELT</span>
-          <span className="badge">Data Modeling</span>
-          <span className="badge">Reporting Support</span>
-          <span className="badge">AWS</span>
-          <span className="badge">Azure</span>
+      <section className="section">
+        <div className="sectionIntro">
+          <p className="eyebrow">Core stack</p>
+          <h2 className="sectionTitle">Tools and platforms I use most often in production data engineering work.</h2>
         </div>
-      </div>
+        <div className="badgeCloud">
+          {stack.map((item) => (
+            <span className="badge" key={item}>
+              {item}
+            </span>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
