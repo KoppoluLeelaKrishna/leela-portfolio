@@ -11,11 +11,11 @@ const projects: Project[] = [
     title: "AWS Pipeline Delivery for Analytics Reporting",
     context: "Enterprise data engineering",
     challenge:
-      "Business reporting depends on reliable ingestion, transformation, and curated outputs that can handle recurring refresh cycles without manual intervention.",
+      "Business reporting depends on reliable ingestion, transformation, and curated outputs that can process structured and semi-structured data on recurring enterprise refresh cycles.",
     delivery: [
-      "Built and supported ETL workflows for batch data movement and transformation.",
-      "Used PySpark and SQL to shape source data into reporting-ready structures.",
-      "Delivered curated datasets for analytics stakeholders and business decision support.",
+      "Designed and maintained AWS-based pipelines supporting ingestion, transformation, and reporting workflows for large-scale enterprise datasets.",
+      "Built ETL logic with PySpark and SQL to prepare analytics-ready data structures for downstream consumption.",
+      "Partnered with analysts, engineers, and business stakeholders to deliver data solutions aligned with operational reporting needs.",
     ],
     stack: ["AWS", "PySpark", "SQL", "Airflow", "Databricks", "Snowflake"],
   },
@@ -23,11 +23,11 @@ const projects: Project[] = [
     title: "Operational Monitoring and Data Quality Controls",
     context: "Reliability and governance",
     challenge:
-      "Production pipelines lose trust quickly when validation, scheduling, and failure handling are weak or inconsistent.",
+      "Production pipelines lose trust quickly when scheduling, dependency handling, validation, and issue resolution are inconsistent across recurring jobs.",
     delivery: [
-      "Supported monitoring and scheduling patterns for recurring production jobs.",
-      "Applied validation checks before data moved into curated reporting layers.",
-      "Improved operational visibility around dependencies, failures, and recovery paths.",
+      "Supported pipeline management activities including job scheduling, monitoring, dependency handling, and recurring job automation.",
+      "Validated transformed datasets with SQL-based checks to improve reporting accuracy before data moved into curated layers.",
+      "Contributed to workflow optimization and documentation so pipelines were easier to support, troubleshoot, and maintain.",
     ],
     stack: ["Airflow", "SQL", "Python", "CloudWatch", "Data Validation"],
   },
@@ -35,11 +35,11 @@ const projects: Project[] = [
     title: "Reporting-Friendly Data Modeling",
     context: "Analytics enablement",
     challenge:
-      "Analytics teams need datasets that are stable, understandable, and structured for reporting rather than raw engineering outputs.",
+      "Analytics teams need datasets that are stable, accessible, and modeled for reporting use instead of remaining as raw engineering outputs.",
     delivery: [
-      "Prepared transformation logic and modeled datasets for downstream reporting use.",
-      "Supported clean schemas and reusable data structures for dashboarding workflows.",
-      "Aligned data preparation work with business reporting and KPI consumption needs.",
+      "Supported data modeling and integration work that improved accessibility of business-critical data for downstream teams.",
+      "Developed reusable transformation components for cleansing, loading, and shaping data into reporting-friendly structures.",
+      "Delivered reliable datasets for analytics and operational reporting across banking, retail, and enterprise environments.",
     ],
     stack: ["SQL", "Power BI", "Data Modeling", "Python"],
   },
@@ -81,8 +81,8 @@ export default function ProjectsPage() {
         <p className="eyebrow">Projects</p>
         <h1 className="pageTitle">Representative work presented as concise case studies for hiring managers and recruiters.</h1>
         <p className="sectionBody narrow">
-          These examples show how I approach enterprise data engineering work through business context, engineering
-          challenge, delivery approach, and supporting technology.
+          These case studies are aligned to my resume and show how I approach enterprise data engineering through
+          production pipeline delivery, workflow reliability, and reporting-ready data preparation.
         </p>
       </section>
 

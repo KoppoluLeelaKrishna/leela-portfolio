@@ -62,7 +62,7 @@ const hiringChecklist = [
   },
   {
     title: "Connects engineering work to business value",
-    detail: "The emphasis stays on reliability, analytics readiness, and usable outcomes instead of listing tools without context.",
+    detail: "The emphasis stays on reliability, analytics readiness, and operational reporting outcomes instead of listing tools without context.",
   },
 ];
 
