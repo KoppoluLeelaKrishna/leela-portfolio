@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ResumeChat from "@/components/ResumeChat";
 
 const recruiterSignals = [
   "4+ years across data engineering, ETL delivery, and analytics support",
@@ -208,6 +209,16 @@ export default function HomePage() {
               <p>{item.detail}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="sectionIntro">
+          <p className="eyebrow">Nani AI</p>
+          <h2 className="sectionTitle">Ask my recruiter-facing assistant for a fast, professional summary.</h2>
+        </div>
+        <div className="infoCard">
+          <ResumeChat />
         </div>
       </section>
 

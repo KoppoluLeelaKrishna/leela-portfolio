@@ -2,23 +2,32 @@
 
 import { useState } from "react";
 
+const suggestedPrompts = [
+  "What are your core data engineering skills?",
+  "Which projects best show your AWS and PySpark experience?",
+  "What are you currently working on in your role?",
+  "Summarize your experience for a recruiter in 5 lines.",
+];
+
 export default function ResumeChat() {
   const [q, setQ] = useState("");
   const [ans, setAns] = useState("");
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
 
-  async function ask() {
+  async function ask(questionOverride?: string) {
+    const question = questionOverride ?? q;
+
     setErr("");
     setAns("");
-    if (!q.trim()) return;
+    if (!question.trim()) return;
 
     setLoading(true);
     try {
       const res = await fetch("/api/resume-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: q }),
+        body: JSON.stringify({ question }),
       });
 
       const data = await res.json();
@@ -26,6 +35,7 @@ export default function ResumeChat() {
         setErr(data?.error || "Something went wrong");
       } else {
         setAns(data.answer);
+        setQ(question);
       }
     } catch (e: unknown) {
       setErr(e instanceof Error ? e.message : "Network error");
@@ -35,21 +45,75 @@ export default function ResumeChat() {
   }
 
   return (
-    <div className="chatWrap">
-      <input
-        className="chatInput"
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        placeholder="Ask: skills, projects, AWS experience, Spark, etc..."
-        onKeyDown={(e) => e.key === "Enter" && ask()}
-      />
+    <div className="naniShell">
+      <div className="naniIntro">
+        <div>
+          <p className="eyebrow">Nani AI</p>
+          <h3 className="naniTitle">Recruiter-ready portfolio assistant</h3>
+        </div>
+        <p className="naniBody">
+          Ask about skills, experience, projects, cloud platforms, or current focus areas. Nani AI answers in a
+          professional, job-focused format tailored for recruiters and hiring managers.
+        </p>
+      </div>
 
-      <button className="chatBtn" onClick={ask} disabled={loading}>
-        {loading ? "Thinking..." : "Ask"}
-      </button>
+      <div className="naniPromptGrid">
+        {suggestedPrompts.map((prompt) => (
+          <button
+            key={prompt}
+            type="button"
+            className="promptChip"
+            onClick={() => {
+              setQ(prompt);
+              void ask(prompt);
+            }}
+            disabled={loading}
+          >
+            {prompt}
+          </button>
+        ))}
+      </div>
 
-      {err && <div className="chatError">{err}</div>}
-      {ans && <div className="chatAnswer">{ans}</div>}
+      <div className="chatWrap">
+        <label className="chatLabel" htmlFor="nani-question">
+          Ask Nani AI
+        </label>
+        <textarea
+          id="nani-question"
+          className="chatInput chatTextarea"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder="Example: What skills do you use most, where have you applied them, and what are you currently working on?"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey) {
+              e.preventDefault();
+              void ask();
+            }
+          }}
+        />
+
+        <div className="chatActions">
+          <button type="button" className="chatBtn" onClick={() => void ask()} disabled={loading}>
+            {loading ? "Nani AI is responding..." : "Ask Nani AI"}
+          </button>
+          <span className="chatHint">Best for recruiter summaries, skills, projects, and current work.</span>
+        </div>
+
+        {err && <div className="chatError">{err}</div>}
+
+        {ans && (
+          <div className="chatTranscript">
+            <div className="chatBubble chatBubbleUser">
+              <span className="bubbleLabel">Question</span>
+              <p>{q}</p>
+            </div>
+            <div className="chatBubble chatBubbleAssistant">
+              <span className="bubbleLabel">Nani AI</span>
+              <div className="chatAnswer">{ans}</div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

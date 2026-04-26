@@ -47,8 +47,8 @@ export default function ResumePage() {
 
       <section className="section">
         <div className="sectionIntro">
-          <p className="eyebrow">Assistant</p>
-          <h2 className="sectionTitle">Ask for a concise resume walkthrough.</h2>
+          <p className="eyebrow">Nani AI</p>
+          <h2 className="sectionTitle">A premium recruiter-facing assistant for skills, projects, and experience questions.</h2>
         </div>
         <div className="infoCard">
           <ResumeChat />

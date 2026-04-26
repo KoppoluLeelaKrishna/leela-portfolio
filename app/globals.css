@@ -605,6 +605,75 @@ a {
   gap: 12px;
 }
 
+.naniShell {
+  display: grid;
+  gap: 20px;
+}
+
+.naniIntro {
+  display: grid;
+  gap: 10px;
+  padding: 22px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(24, 35, 49, 0.96), rgba(58, 76, 98, 0.92));
+  color: #f7efe4;
+}
+
+.naniIntro .eyebrow {
+  margin-bottom: 6px;
+  color: #dfbf8c;
+}
+
+.naniTitle {
+  margin: 0;
+  font-family: var(--font-serif), serif;
+  font-size: 1.6rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.naniBody {
+  margin: 0;
+  color: rgba(247, 239, 228, 0.88);
+}
+
+.naniPromptGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.promptChip {
+  appearance: none;
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(155, 107, 47, 0.14);
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.promptChip:hover {
+  transform: translateY(-1px);
+  border-color: rgba(155, 107, 47, 0.3);
+  background: #fff;
+}
+
+.promptChip:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.chatLabel {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--muted-strong);
+}
+
 .chatInput {
   width: 100%;
   min-height: 54px;
@@ -617,9 +686,22 @@ a {
   font: inherit;
 }
 
+.chatTextarea {
+  min-height: 116px;
+  padding: 16px 18px;
+  resize: vertical;
+}
+
 .chatInput:focus {
   border-color: rgba(155, 107, 47, 0.34);
   box-shadow: 0 0 0 4px rgba(155, 107, 47, 0.08);
+}
+
+.chatActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
 }
 
 .chatBtn {
@@ -635,13 +717,19 @@ a {
   cursor: pointer;
 }
 
+.chatHint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .chatBtn:disabled {
   opacity: 0.65;
   cursor: not-allowed;
 }
 
 .chatError,
-.chatAnswer {
+.chatAnswer,
+.chatBubble {
   padding: 16px 18px;
   border-radius: 18px;
   border: 1px solid var(--border);
@@ -653,9 +741,40 @@ a {
   color: #991b1b;
 }
 
+.chatTranscript {
+  display: grid;
+  gap: 12px;
+}
+
+.chatBubbleUser {
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.chatBubbleAssistant {
+  background: rgba(247, 243, 236, 0.94);
+}
+
+.bubbleLabel {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: var(--accent-strong);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.chatBubble p {
+  margin: 0;
+  color: var(--text);
+}
+
 .chatAnswer {
   white-space: pre-wrap;
   color: var(--muted-strong);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .footer {
@@ -692,7 +811,8 @@ a {
   .heroSection,
   .twoColSection,
   .featureGrid,
-  .metricsGrid {
+  .metricsGrid,
+  .naniPromptGrid {
     grid-template-columns: 1fr;
   }
 
