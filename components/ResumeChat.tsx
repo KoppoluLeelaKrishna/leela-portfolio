@@ -45,19 +45,19 @@ export default function ResumeChat() {
   }
 
   return (
-    <div className="naniShell">
-      <div className="naniIntro">
+    <div className="assistShell">
+      <div className="assistIntro">
         <div>
           <p className="eyebrow">ASSIST AI</p>
-          <h3 className="naniTitle">Recruiter-ready portfolio assistant</h3>
+          <h3 className="assistTitle">Recruiter-ready portfolio assistant</h3>
         </div>
-        <p className="naniBody">
+        <p className="assistBody">
           Ask about skills, experience, projects, cloud platforms, or current focus areas. ASSIST AI answers in a
           professional, job-focused format tailored for recruiters and hiring managers.
         </p>
       </div>
 
-      <div className="naniPromptGrid">
+      <div className="assistPromptGrid">
         {suggestedPrompts.map((prompt) => (
           <button
             key={prompt}
@@ -75,11 +75,11 @@ export default function ResumeChat() {
       </div>
 
       <div className="chatWrap">
-        <label className="chatLabel" htmlFor="nani-question">
+        <label className="chatLabel" htmlFor="assist-question">
           Ask ASSIST AI
         </label>
         <textarea
-          id="nani-question"
+          id="assist-question"
           className="chatInput chatTextarea"
           value={q}
           onChange={(e) => setQ(e.target.value)}

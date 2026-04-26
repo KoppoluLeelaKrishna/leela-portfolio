@@ -605,12 +605,12 @@ a {
   gap: 12px;
 }
 
-.naniShell {
+.assistShell {
   display: grid;
   gap: 20px;
 }
 
-.naniIntro {
+.assistIntro {
   display: grid;
   gap: 10px;
   padding: 22px;
@@ -619,12 +619,12 @@ a {
   color: #f7efe4;
 }
 
-.naniIntro .eyebrow {
+.assistIntro .eyebrow {
   margin-bottom: 6px;
   color: #dfbf8c;
 }
 
-.naniTitle {
+.assistTitle {
   margin: 0;
   font-family: var(--font-serif), serif;
   font-size: 1.6rem;
@@ -632,12 +632,12 @@ a {
   letter-spacing: -0.02em;
 }
 
-.naniBody {
+.assistBody {
   margin: 0;
   color: rgba(247, 239, 228, 0.88);
 }
 
-.naniPromptGrid {
+.assistPromptGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
@@ -812,7 +812,7 @@ a {
   .twoColSection,
   .featureGrid,
   .metricsGrid,
-  .naniPromptGrid {
+  .assistPromptGrid {
     grid-template-columns: 1fr;
   }
 
