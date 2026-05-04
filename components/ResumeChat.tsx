@@ -3,10 +3,10 @@
 import { useState } from "react";
 
 const suggestedPrompts = [
-  "What are your core data engineering skills?",
-  "Which projects best show your AWS and PySpark experience?",
-  "What are you currently working on in your role?",
-  "Summarize your experience for a recruiter in 5 lines.",
+  "What AI and ML skills do you have for data engineering roles?",
+  "Describe your RAG pipeline and vector database project.",
+  "What software engineering AI skills do you bring to a team?",
+  "Summarize your full background for a recruiter in 5 lines.",
 ];
 
 export default function ResumeChat() {
@@ -52,8 +52,8 @@ export default function ResumeChat() {
           <h3 className="assistTitle">Recruiter-ready portfolio assistant</h3>
         </div>
         <p className="assistBody">
-          Ask about skills, experience, projects, cloud platforms, or current focus areas. ASSIST AI answers in a
-          professional, job-focused format tailored for recruiters and hiring managers.
+          Ask about AI/ML skills, data engineering, software engineering projects, or experience for any role. ASSIST AI
+          answers in a professional, job-focused format tailored for recruiters and hiring managers.
         </p>
       </div>
 
@@ -83,7 +83,7 @@ export default function ResumeChat() {
           className="chatInput chatTextarea"
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder="Example: What skills do you use most, where have you applied them, and what are you currently working on?"
+          placeholder="Example: What AI and ML skills do you have for a data engineer or software engineer role?"
           onKeyDown={(e) => {
             if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
@@ -96,7 +96,7 @@ export default function ResumeChat() {
           <button type="button" className="chatBtn" onClick={() => void ask()} disabled={loading}>
             {loading ? "ASSIST AI is responding..." : "Ask ASSIST AI"}
           </button>
-          <span className="chatHint">Best for recruiter summaries, skills, projects, and current work.</span>
+          <span className="chatHint">Best for AI/ML skills, data engineering, software engineering, and recruiter summaries.</span>
         </div>
 
         {err && <div className="chatError">{err}</div>}

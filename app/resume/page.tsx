@@ -5,10 +5,10 @@ export default function ResumePage() {
     <div className="pageStack">
       <section className="pageHero">
         <p className="eyebrow">Resume</p>
-        <h1 className="pageTitle">Everything a recruiter needs, organized for a fast qualification pass.</h1>
+        <h1 className="pageTitle">Everything a recruiter needs — data engineering, AI/ML, and software engineering background in one place.</h1>
         <p className="sectionBody narrow">
-          Access the latest resume directly, review a quick summary of fit, or use the assistant for concise questions
-          about skills, tools, and experience.
+          Access the latest resume directly, review a quick summary of fit, or ask ASSIST AI any question about skills,
+          AI projects, tools, and experience across all target roles.
         </p>
       </section>
 
@@ -37,9 +37,10 @@ export default function ResumePage() {
         <article className="infoCard">
           <h2>Quick summary</h2>
           <ul className="detailList">
-            <li>4+ years of experience across data engineering and analytics support</li>
-            <li>AWS and Azure platform exposure in enterprise environments</li>
-            <li>PySpark, SQL, Airflow, Databricks, Snowflake, and reporting support</li>
+            <li>4+ years across data engineering, AI/ML pipelines, and analytics delivery</li>
+            <li>AI/ML stack: LangChain, RAG, Pinecone, OpenAI API, Claude API, MLflow, SageMaker</li>
+            <li>Data engineering: PySpark, SQL, Airflow, Databricks, Snowflake, Kafka, dbt, AWS, Azure</li>
+            <li>Software engineering: FastAPI, LLM integration, prompt engineering, Docker, CI/CD</li>
             <li>M.S. in Computer Science from UT Arlington, completed December 2024</li>
           </ul>
         </article>
@@ -48,7 +49,7 @@ export default function ResumePage() {
       <section className="section">
         <div className="sectionIntro">
           <p className="eyebrow">ASSIST AI</p>
-          <h2 className="sectionTitle">A premium recruiter-facing assistant for skills, projects, and experience questions.</h2>
+          <h2 className="sectionTitle">Ask about AI/ML skills, data engineering, software engineering, or any role-specific question.</h2>
         </div>
         <div className="infoCard">
           <ResumeChat />
