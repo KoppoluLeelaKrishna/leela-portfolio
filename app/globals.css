@@ -809,6 +809,299 @@ a {
   background: transparent;
 }
 
+/* ─── Floating ASSIST AI widget ─── */
+
+/* Backdrop */
+.floatBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 148;
+  background: transparent;
+}
+
+/* Toggle button */
+.floatBtn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 150;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: none;
+  background: var(--surface-dark);
+  color: #f4e8d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(14, 22, 34, 0.35), 0 2px 8px rgba(14, 22, 34, 0.18);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.22s ease,
+              background 0.18s ease;
+}
+
+.floatBtn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 36px rgba(14, 22, 34, 0.4), 0 4px 12px rgba(14, 22, 34, 0.2);
+  background: #121b27;
+}
+
+.floatBtnOpen {
+  background: #2a3b50;
+}
+
+/* Panel */
+@keyframes floatPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.floatPanel {
+  position: fixed;
+  bottom: 94px;
+  right: 28px;
+  z-index: 149;
+  width: 360px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 26px;
+  background: rgba(252, 248, 242, 0.97);
+  border: 1px solid rgba(23, 33, 45, 0.12);
+  box-shadow: 0 24px 64px rgba(14, 22, 34, 0.22), 0 4px 18px rgba(14, 22, 34, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px) scale(0.97);
+  transition: opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.floatPanelOpen {
+  opacity: 1;
+  pointer-events: all;
+  transform: none;
+}
+
+/* Panel header */
+.floatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px 16px 14px;
+  margin: -20px -20px 0;
+  background: linear-gradient(135deg, rgba(24, 35, 49, 0.96), rgba(42, 58, 80, 0.92));
+  border-radius: 22px 22px 0 0;
+}
+
+.floatBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.floatEyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #dfbf8c;
+}
+
+.floatHeading {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f4ece0;
+  font-family: var(--font-serif), serif;
+  letter-spacing: -0.01em;
+}
+
+.floatClose {
+  appearance: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(244, 236, 224, 0.8);
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.16s ease, color 0.16s ease;
+  flex-shrink: 0;
+}
+
+.floatClose:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+/* Quick prompt chips */
+.floatChips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.floatChip {
+  appearance: none;
+  text-align: left;
+  padding: 9px 11px;
+  border-radius: 12px;
+  border: 1px solid rgba(155, 107, 47, 0.14);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--muted-strong);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.35;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.floatChip:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: rgba(155, 107, 47, 0.28);
+  background: #fff;
+}
+
+.floatChip:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Input row */
+.floatInputRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.floatInput {
+  flex: 1;
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.floatInput:focus {
+  border-color: rgba(155, 107, 47, 0.36);
+  box-shadow: 0 0 0 3px rgba(155, 107, 47, 0.08);
+}
+
+.floatSend {
+  appearance: none;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--surface-dark);
+  color: #f4e8d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.16s ease, transform 0.16s ease;
+}
+
+.floatSend:hover:not(:disabled) {
+  background: #121b27;
+  transform: translateX(1px);
+}
+
+.floatSend:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.floatSpinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(244, 232, 212, 0.35);
+  border-top-color: #f4e8d4;
+  border-radius: 999px;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error */
+.floatError {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(185, 28, 28, 0.07);
+  border: 1px solid rgba(185, 28, 28, 0.14);
+  color: #991b1b;
+  font-size: 0.86rem;
+}
+
+/* Answer */
+.floatAnswer {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(247, 243, 236, 0.94);
+  border: 1px solid rgba(155, 107, 47, 0.12);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.floatAnswerLabel {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-strong);
+}
+
+.floatAnswerText {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .floatPanel {
+    right: 12px;
+    bottom: 86px;
+    width: calc(100vw - 24px);
+  }
+
+  .floatBtn {
+    right: 16px;
+    bottom: 20px;
+  }
+}
+
 /* ─── Scroll progress bar ─── */
 .scrollBar {
   display: none;

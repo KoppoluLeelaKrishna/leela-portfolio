@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import Nav from "@/components/Nav";
 import AnimationProvider from "@/components/AnimationProvider";
+import FloatingAssist from "@/components/FloatingAssist";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
               <span className="muted">Data Engineer based in Dallas, Texas</span>
             </div>
           </footer>
+          <FloatingAssist />
         </div>
       </body>
     </html>
