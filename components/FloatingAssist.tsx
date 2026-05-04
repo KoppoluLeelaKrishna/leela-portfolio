@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 
 const quickPrompts = [
   "What AI and ML skills do you have?",
@@ -119,7 +120,7 @@ export default function FloatingAssist() {
         {ans && (
           <div className="floatAnswer" ref={answerRef}>
             <span className="floatAnswerLabel">ASSIST AI</span>
-            <p className="floatAnswerText">{ans}</p>
+            <MarkdownRenderer content={ans} size="compact" />
           </div>
         )}
       </div>

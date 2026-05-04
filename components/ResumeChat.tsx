@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MarkdownRenderer from "@/components/MarkdownRenderer";
 
 const suggestedPrompts = [
   "What AI and ML skills do you have for data engineering roles?",
@@ -109,7 +110,7 @@ export default function ResumeChat() {
             </div>
             <div className="chatBubble chatBubbleAssistant">
               <span className="bubbleLabel">ASSIST AI</span>
-              <div className="chatAnswer">{ans}</div>
+              <MarkdownRenderer content={ans} />
             </div>
           </div>
         )}

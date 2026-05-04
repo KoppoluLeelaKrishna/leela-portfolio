@@ -802,12 +802,56 @@ a {
 }
 
 .chatAnswer {
-  white-space: pre-wrap;
-  color: var(--muted-strong);
   padding: 0;
   border: 0;
   background: transparent;
 }
+
+/* ─── Markdown renderer ─── */
+.md { display: grid; gap: 6px; }
+.md--compact { gap: 4px; }
+
+.mdLabel {
+  margin: 8px 0 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--accent-strong);
+}
+/* Remove top margin from the very first label */
+.md > .mdLabel:first-child { margin-top: 0; }
+
+.mdSubheading {
+  margin: 6px 0 2px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #13202d;
+}
+
+.mdPara {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.62;
+  color: var(--muted-strong);
+}
+
+.md--compact .mdPara { font-size: 0.88rem; }
+
+.mdList {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 3px;
+}
+
+.mdList li {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted-strong);
+}
+
+.md--compact .mdList li { font-size: 0.86rem; }
 
 /* ─── Floating ASSIST AI widget ─── */
 
@@ -1072,20 +1116,12 @@ a {
 
 .floatAnswerLabel {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--accent-strong);
-}
-
-.floatAnswerText {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--text);
-  line-height: 1.6;
-  white-space: pre-wrap;
 }
 
 /* Mobile */
