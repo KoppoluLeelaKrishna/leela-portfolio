@@ -384,6 +384,7 @@ a {
 }
 
 .portraitFrame {
+  position: relative;
   overflow: hidden;
   border-radius: 24px;
   background: #ddd1bf;
@@ -394,6 +395,39 @@ a {
   width: 100%;
   height: auto;
   object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Shine sweep overlay ── */
+.portraitShine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  background-position: -100% 0;
+  transition: background-position 0s;
+}
+
+.portraitCard:hover .portraitShine {
+  background-position: 200% 0;
+  transition: background-position 0.75s ease;
+}
+
+/* ── Ambient glow ring on hover ── */
+.portraitCard:hover {
+  box-shadow:
+    0 32px 80px rgba(24, 35, 49, 0.22),
+    0 0 0 2px rgba(155, 107, 47, 0.22),
+    0 0 40px rgba(155, 107, 47, 0.1);
 }
 
 .portraitMeta {
@@ -437,14 +471,56 @@ a {
   align-items: flex-start;
 }
 
+@keyframes portraitFloat {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-10px); }
+}
+
 .pageHeroPortrait {
+  position: relative;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
   background: #ddd1bf;
   flex-shrink: 0;
-  animation: heroItemIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+  animation:
+    heroItemIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both,
+    portraitFloat 5s ease-in-out 1.2s infinite;
+  transition: box-shadow 0.3s ease;
+}
+
+.pageHeroPortrait:hover {
+  animation-play-state: paused;
+  box-shadow:
+    0 24px 60px rgba(24, 35, 49, 0.2),
+    0 0 0 2px rgba(155, 107, 47, 0.22),
+    0 0 32px rgba(155, 107, 47, 0.1);
+}
+
+/* Shine sweep on sub-page portraits */
+.pageHeroPortrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.26) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  background-position: -100% 0;
+  transition: background-position 0s;
+}
+
+.pageHeroPortrait:hover::after {
+  background-position: 200% 0;
+  transition: background-position 0.75s ease;
 }
 
 .pageHeroPortraitImg {
@@ -452,6 +528,11 @@ a {
   width: 100%;
   height: auto;
   object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pageHeroPortrait:hover .pageHeroPortraitImg {
+  transform: scale(1.06);
 }
 
 @media (max-width: 720px) {

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import ResumeChat from "@/components/ResumeChat";
+import PortraitCard from "@/components/PortraitCard";
 
 const recruiterSignals = [
   "4+ years across data engineering, AI/ML pipelines, and analytics delivery",
@@ -133,32 +133,7 @@ export default function HomePage() {
         </div>
 
         <aside className="heroAside">
-          <div className="portraitCard">
-            <div className="portraitFrame">
-              <Image
-                src="/profile.jpg"
-                alt="Leela Krishna Koppolu"
-                width={420}
-                height={500}
-                className="profileImage"
-                priority
-              />
-            </div>
-            <div className="portraitMeta">
-              <div>
-                <p className="metaLabel">Target roles</p>
-                <p className="metaValue">Data Engineer, AI/ML Engineer, Software Engineer, Data Analyst</p>
-              </div>
-              <div>
-                <p className="metaLabel">Location</p>
-                <p className="metaValue">Dallas, Texas with openness to relocation</p>
-              </div>
-              <div>
-                <p className="metaLabel">Education</p>
-                <p className="metaValue">M.S. Computer Science, UT Arlington</p>
-              </div>
-            </div>
-          </div>
+          <PortraitCard />
         </aside>
       </section>
 
