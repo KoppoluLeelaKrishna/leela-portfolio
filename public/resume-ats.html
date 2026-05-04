@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leela Krishna Koppolu — Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.5;
+      color: #111;
+      background: #fff;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.55in 0.7in;
+    }
+
+    /* ── Header ── */
+    .name {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #060606;
+      margin-bottom: 5px;
+    }
+
+    .contact-line {
+      font-size: 9.5pt;
+      color: #333;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 20px;
+      margin-bottom: 12px;
+    }
+
+    .contact-line a { color: #1a4a8a; text-decoration: none; }
+    .contact-line a:hover { text-decoration: underline; }
+
+    /* ── Dividers ── */
+    .rule-heavy {
+      border: none;
+      border-top: 1.8px solid #111;
+      margin: 0 0 10px;
+    }
+
+    .rule-light {
+      border: none;
+      border-top: 0.8px solid #bbb;
+      margin: 10px 0 9px;
+    }
+
+    /* ── Section title ── */
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: #060606;
+      margin-bottom: 7px;
+    }
+
+    /* ── Summary ── */
+    .summary { font-size: 10pt; color: #1a1a1a; line-height: 1.55; }
+
+    /* ── Skills grid ── */
+    .skill-row {
+      display: grid;
+      grid-template-columns: 188px 1fr;
+      gap: 4px;
+      margin-bottom: 3.5px;
+      font-size: 10pt;
+    }
+
+    .skill-label { font-weight: 700; color: #060606; }
+    .skill-value { color: #1a1a1a; }
+
+    /* ── Experience ── */
+    .job { margin-bottom: 13px; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .job-title { font-weight: 700; font-size: 10.5pt; color: #060606; }
+    .job-date  { font-size: 10pt; color: #444; white-space: nowrap; flex-shrink: 0; }
+    .job-sub   { font-size: 10pt; color: #555; margin-bottom: 4px; }
+
+    ul { padding-left: 17px; margin-top: 4px; }
+    li { font-size: 10pt; color: #1a1a1a; margin-bottom: 3px; line-height: 1.48; }
+
+    /* ── Projects ── */
+    .project { margin-bottom: 11px; }
+    .project-title { font-weight: 700; font-size: 10pt; color: #060606; }
+    .project-stack { font-size: 9.5pt; color: #555; font-style: italic; margin-bottom: 2px; }
+
+    /* ── Education ── */
+    .edu-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .edu-degree { font-weight: 700; font-size: 10.5pt; color: #060606; }
+    .edu-date   { font-size: 10pt; color: #444; white-space: nowrap; flex-shrink: 0; }
+    .edu-school { font-size: 10pt; color: #333; margin-top: 2px; }
+    .edu-focus  { font-size: 10pt; color: #555; margin-top: 2px; }
+
+    /* ── Print ── */
+    @media print {
+      body { padding: 0.45in 0.55in; }
+      @page { size: letter; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<div class="name">Leela Krishna Koppolu</div>
+<div class="contact-line">
+  <span>Dallas, Texas</span>
+  <span>leelakrishnakoppolu@gmail.com</span>
+  <a href="https://www.linkedin.com/in/leela-krishna-klk/" target="_blank">linkedin.com/in/leela-krishna-klk</a>
+  <a href="https://github.com/KoppoluLeelaKrishna" target="_blank">github.com/KoppoluLeelaKrishna</a>
+  <a href="https://leela-portfolio-mu.vercel.app" target="_blank">leela-portfolio-mu.vercel.app</a>
+</div>
+
+<hr class="rule-heavy">
+
+<!-- ── SUMMARY ── -->
+<div class="section-title">Professional Summary</div>
+<p class="summary">
+  Data and AI Engineer with 4+ years of experience building cloud-based data pipelines, AI/ML-powered systems, and ETL
+  workflows across banking, retail, and enterprise environments. Proven expertise in AWS, Azure, PySpark, SQL, Airflow,
+  Databricks, and Snowflake alongside a modern AI/ML stack — LangChain, RAG architectures, vector databases, LLM APIs
+  (OpenAI, Claude), MLflow, AWS SageMaker, and real-time ML feature engineering with Kafka and PySpark Streaming. M.S.
+  in Computer Science from The University of Texas at Arlington (December 2024). Open to Data Engineer, AI/ML Engineer,
+  Software Engineer, and Data Analyst roles.
+</p>
+
+<hr class="rule-light">
+
+<!-- ── SKILLS ── -->
+<div class="section-title">Technical Skills</div>
+
+<div class="skill-row">
+  <span class="skill-label">Languages:</span>
+  <span class="skill-value">Python, SQL, TypeScript</span>
+</div>
+<div class="skill-row">
+  <span class="skill-label">Cloud Platforms:</span>
+  <span class="skill-value">AWS (S3, Lambda, Glue, SageMaker, Kinesis, Redshift, CloudWatch), Azure (Databricks, Data Factory, Blob Storage)</span>
+</div>
+<div class="skill-row">
+  <span class="skill-label">Data Engineering:</span>
+  <span class="skill-value">ETL/ELT, Data Pipelines, Batch Processing, Kafka Streaming, Data Modeling, dbt, Workflow Orchestration</span>
+</div>
+<div class="skill-row">
+  <span class="skill-label">Platforms &amp; Tools:</span>
+  <span class="skill-value">Airflow, Databricks, Snowflake, Git, Linux, Power BI, Redis, Docker</span>
+</div>
+<div class="skill-row">
+  <span class="skill-label">AI/ML — Data Eng:</span>
+  <span class="skill-value">LangChain, LangGraph, RAG Architecture, Pinecone, ChromaDB, Embedding Pipelines, OpenAI API, Claude API, MLflow, SageMaker, Feature Stores, PySpark Structured Streaming</span>
+</div>
+<div class="skill-row">
+  <span class="skill-label">AI/ML — Software:</span>
+  <span class="skill-value">FastAPI, LLM Integration, Prompt Engineering, AI Agent Workflows, Hugging Face Transformers, REST APIs, CI/CD</span>
+</div>
+<div class="skill-row">
+  <span class="skill-label">AI/ML — Analytics:</span>
+  <span class="skill-value">scikit-learn, Pandas, NumPy, NLP/Text Analytics, Statistical Anomaly Detection, Automated Reporting</span>
+</div>
+
+<hr class="rule-light">
+
+<!-- ── EXPERIENCE ── -->
+<div class="section-title">Professional Experience</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Data Engineer — Walmart</span>
+    <span class="job-date">December 2024 – Present</span>
+  </div>
+  <div class="job-sub">Dallas, Texas</div>
+  <ul>
+    <li>Design and maintain AWS-based data pipelines for scalable ingestion, transformation, and reporting workflows across large-scale enterprise datasets using PySpark and SQL.</li>
+    <li>Optimize ETL processes for performance, reliability, and data quality on Databricks and Snowflake, supporting recurring analytics reporting cycles.</li>
+    <li>Apply AI/ML pipeline patterns including LangChain-based RAG workflows and LLM-assisted data quality tooling alongside core ETL delivery.</li>
+    <li>Support data modeling and integration to improve accessibility and downstream usability of business-critical datasets for analytics consumers.</li>
+    <li>Orchestrate automated and monitored recurring data jobs using Airflow, collaborating with analysts, engineers, and business stakeholders.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Information Engineer Intern — Truist Financial</span>
+    <span class="job-date">March 2023 – November 2023</span>
+  </div>
+  <ul>
+    <li>Built and enhanced AWS-based ETL pipelines moving structured and semi-structured data from source systems into analytics-ready datasets for enterprise reporting.</li>
+    <li>Managed job scheduling, dependency handling, data validation, and issue resolution for recurring production pipelines using Airflow and SQL.</li>
+    <li>Validated transformed datasets with SQL-based quality checks, improving reporting accuracy before data moved into curated layers.</li>
+    <li>Contributed to workflow optimization and technical documentation to improve pipeline maintainability across the team.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-header">
+    <span class="job-title">Software Engineer — Infosys</span>
+    <span class="job-date">January 2021 – December 2022</span>
+  </div>
+  <ul>
+    <li>Developed and supported data engineering pipelines across AWS and Azure environments for ingestion, transformation, and loading workflows serving banking and enterprise clients.</li>
+    <li>Built reusable ETL components using PySpark and SQL for data processing, cleansing, and transformation at scale on Databricks.</li>
+    <li>Delivered reliable datasets for analytics and operational reporting; supported validation, troubleshooting, and performance tuning across recurring batch jobs.</li>
+  </ul>
+</div>
+
+<hr class="rule-light">
+
+<!-- ── PROJECTS ── -->
+<div class="section-title">AI &amp; Data Engineering Projects</div>
+
+<div class="project">
+  <div class="project-title">AI-Powered Data Intelligence Pipeline (RAG + Vector Store)</div>
+  <div class="project-stack">Python · LangChain · OpenAI API · Pinecone · Airflow · AWS S3 · Snowflake · PostgreSQL</div>
+  <ul>
+    <li>Built end-to-end RAG pipeline ingesting enterprise documents and structured datasets, generating embeddings via OpenAI API, and indexing in Pinecone vector store for semantic search at scale.</li>
+    <li>Orchestrated ingestion, chunking, embedding, and refresh cycles with Airflow integrated with AWS S3 and Snowflake, keeping AI outputs accessible alongside traditional reporting datasets.</li>
+    <li>Designed LangChain-powered query layer enabling self-serve document Q&A for analysts, reducing ad-hoc data request volume.</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-title">Real-Time ML Feature Engineering Platform</div>
+  <div class="project-stack">Kafka · PySpark Streaming · MLflow · Redis · AWS Kinesis · Snowflake · Feature Store</div>
+  <ul>
+    <li>Designed real-time feature engineering platform using Kafka and PySpark Structured Streaming, computing ML features with sub-second latency from live production event streams.</li>
+    <li>Built feature store with Redis for online serving and Snowflake for offline training, with MLflow for feature versioning and lineage; reduced serving latency from 4-hour batch cycles to under 2 seconds.</li>
+  </ul>
+</div>
+
+<div class="project">
+  <div class="project-title">LLM-Powered Data Quality and Anomaly Detection Engine</div>
+  <div class="project-stack">Python · Claude API · FastAPI · Airflow · Great Expectations · dbt · Snowflake · AWS Lambda</div>
+  <ul>
+    <li>Integrated Claude API with data validation workflows to detect statistical and semantic anomalies and generate natural-language quality reports with actionable remediation steps.</li>
+    <li>Built FastAPI service deployed on AWS Lambda; Airflow triggers post-transform quality scans making AI-driven validation a standard checkpoint in production ETL workflows.</li>
+  </ul>
+</div>
+
+<hr class="rule-light">
+
+<!-- ── EDUCATION ── -->
+<div class="section-title">Education</div>
+<div class="edu-header">
+  <span class="edu-degree">Master of Science, Computer Science</span>
+  <span class="edu-date">December 2024</span>
+</div>
+<div class="edu-school">The University of Texas at Arlington — Arlington, Texas</div>
+<div class="edu-focus">Focus Areas: Data Engineering, Machine Learning, Distributed Systems, Cloud Computing, Analytics</div>
+
+</body>
+</html>
