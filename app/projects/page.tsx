@@ -88,9 +88,13 @@ const projects: Project[] = [
   },
 ];
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
-    <article className={`caseStudy${project.isAI ? " caseStudyAI" : ""}`}>
+    <article
+      className={`caseStudy${project.isAI ? " caseStudyAI" : ""}`}
+      data-reveal=""
+      data-reveal-delay={String(index * 80)}
+    >
       <div className="caseHeader">
         <div>
           <p className="caseKicker">{project.context}</p>
@@ -131,8 +135,8 @@ export default function ProjectsPage() {
       </section>
 
       <section className="caseStudyList">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+        {projects.map((project, i) => (
+          <ProjectCard key={project.title} project={project} index={i} />
         ))}
       </section>
     </div>

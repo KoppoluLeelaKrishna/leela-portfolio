@@ -11,7 +11,7 @@ export default function ContactPage() {
       </section>
 
       <section className="twoColSection">
-        <article className="infoCard">
+        <article className="infoCard" data-reveal="" data-reveal-delay="0">
           <h2>Reach me directly</h2>
           <div className="contactActions">
             <a className="btn btnPrimary" href="mailto:leelakrishnakoppolu@gmail.com">
@@ -36,7 +36,7 @@ export default function ContactPage() {
           </div>
         </article>
 
-        <article className="infoCard">
+        <article className="infoCard" data-reveal="" data-reveal-delay="100">
           <h2>Role fit</h2>
           <ul className="detailList">
             <li>Data Engineer / Cloud Data Engineer</li>

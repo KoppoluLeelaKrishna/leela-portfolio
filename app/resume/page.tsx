@@ -13,7 +13,7 @@ export default function ResumePage() {
       </section>
 
       <section className="twoColSection">
-        <article className="infoCard">
+        <article className="infoCard" data-reveal="" data-reveal-delay="0">
           <h2>Resume access</h2>
           <div className="heroActions">
             <a
@@ -34,7 +34,7 @@ export default function ResumePage() {
           </div>
         </article>
 
-        <article className="infoCard">
+        <article className="infoCard" data-reveal="" data-reveal-delay="100">
           <h2>Quick summary</h2>
           <ul className="detailList">
             <li>4+ years across data engineering, AI/ML pipelines, and analytics delivery</li>
@@ -46,7 +46,7 @@ export default function ResumePage() {
         </article>
       </section>
 
-      <section className="section">
+      <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">ASSIST AI</p>
           <h2 className="sectionTitle">Ask about AI/ML skills, data engineering, software engineering, or any role-specific question.</h2>

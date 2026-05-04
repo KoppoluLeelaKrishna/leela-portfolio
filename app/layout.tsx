@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import Nav from "@/components/Nav";
+import AnimationProvider from "@/components/AnimationProvider";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -15,9 +16,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Leela Krishna Koppolu | Data Engineer Portfolio",
+  title: "Leela Krishna Koppolu | Data + AI Engineer Portfolio",
   description:
-    "Recruiter-focused data engineer portfolio featuring AWS and Azure pipelines, PySpark ETL delivery, workflow orchestration, analytics-ready data products, and enterprise reporting support.",
+    "Data and AI engineer portfolio — AWS and Azure pipelines, PySpark ETL, LangChain RAG systems, real-time ML feature engineering, LLM integrations, and enterprise analytics delivery.",
 };
 
 export default function RootLayout({
@@ -29,6 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${jakarta.variable} ${cormorant.variable}`}>
         <div className="siteShell">
+          <div className="scrollBar" aria-hidden="true" />
+          <AnimationProvider />
           <Nav />
           <main className="container">{children}</main>
           <footer className="footer">

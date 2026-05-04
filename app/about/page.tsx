@@ -75,7 +75,7 @@ export default function AboutPage() {
       </section>
 
       <section className="twoColSection">
-        <article className="infoCard">
+        <article className="infoCard" data-reveal="" data-reveal-delay="0">
           <h2>How I work</h2>
           <ul className="detailList">
             <li>I design pipelines with downstream reporting, ML models, and analytics users in mind.</li>
@@ -85,7 +85,7 @@ export default function AboutPage() {
           </ul>
         </article>
 
-        <article className="infoCard">
+        <article className="infoCard" data-reveal="" data-reveal-delay="100">
           <h2>Professional summary</h2>
           <p className="sectionBody">
             My background combines hands-on enterprise data delivery with deep ML engineering skills. I completed my
@@ -96,7 +96,7 @@ export default function AboutPage() {
         </article>
       </section>
 
-      <section className="section">
+      <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">Data engineering stack</p>
           <h2 className="sectionTitle">Core tools and platforms used in production data engineering work.</h2>
@@ -110,14 +110,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">AI & machine learning skills</p>
           <h2 className="sectionTitle">AI capabilities organized by role — ready for data, software, and analytics teams.</h2>
         </div>
         <div className="aiSkillGrid">
-          {aiSkillGroups.map((group) => (
-            <article className="aiSkillCard" key={group.role}>
+          {aiSkillGroups.map((group, i) => (
+            <article className="aiSkillCard" key={group.role} data-reveal="scale" data-reveal-delay={String(i * 100)}>
               <p className="aiSkillRole">{group.role}</p>
               <div className="badgeCloud">
                 {group.skills.map((skill) => (

@@ -162,14 +162,14 @@ export default function HomePage() {
         </aside>
       </section>
 
-      <section className="section">
+      <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">Core strengths</p>
           <h2 className="sectionTitle">The capabilities I bring to enterprise data engineering teams.</h2>
         </div>
         <div className="featureGrid">
-          {priorityCards.map((item) => (
-            <article className="featureCard" key={item.title}>
+          {priorityCards.map((item, i) => (
+            <article className="featureCard" key={item.title} data-reveal="scale" data-reveal-delay={String(i * 90)}>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -177,14 +177,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">Experience snapshot</p>
           <h2 className="sectionTitle">Recent roles aligned with enterprise data engineering and analytics delivery.</h2>
         </div>
         <div className="timeline">
-          {experience.map((job) => (
-            <article className="timelineCard" key={job.company}>
+          {experience.map((job, i) => (
+            <article className="timelineCard" key={job.company} data-reveal="" data-reveal-delay={String(i * 110)}>
               <div className="timelineHeader">
                 <div>
                   <h3>{job.company}</h3>
@@ -198,14 +198,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">Hiring fit</p>
           <h2 className="sectionTitle">What hiring teams can confirm quickly from my background.</h2>
         </div>
         <div className="featureGrid">
-          {hiringChecklist.map((item) => (
-            <article className="projectPreview" key={item.title}>
+          {hiringChecklist.map((item, i) => (
+            <article className="projectPreview" key={item.title} data-reveal="scale" data-reveal-delay={String(i * 90)}>
               <h3>{item.title}</h3>
               <p>{item.detail}</p>
             </article>
@@ -213,7 +213,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">ASSIST AI</p>
           <h2 className="sectionTitle">Ask my recruiter-facing assistant for a fast, professional summary.</h2>
@@ -223,7 +223,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section recruiterCta">
+      <section className="section recruiterCta" data-reveal="">
         <div>
           <p className="eyebrow">Next step</p>
           <h2 className="sectionTitle">Available for data engineering, AI/ML, and software engineering opportunities.</h2>
