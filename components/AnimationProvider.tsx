@@ -1,17 +1,31 @@
 "use client";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function AnimationProvider() {
-  useEffect(() => {
+  const pathname = usePathname();
+
+  useLayoutEffect(() => {
     const root = document.documentElement;
+
+    // Remove hide CSS and clear previous page's visible state synchronously,
+    // before the browser paints — this prevents the new page from flashing invisible.
+    root.classList.remove("reveal-ready");
+    document.querySelectorAll<HTMLElement>("[data-reveal].is-visible").forEach((el) => {
+      el.classList.remove("is-visible");
+    });
+
     const all = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
-    if (!all.length) return;
+
+    if (!all.length) {
+      root.classList.add("reveal-ready");
+      return;
+    }
 
     const vh = window.innerHeight;
     const inView = new Set<HTMLElement>();
 
-    // Mark elements already in viewport as visible BEFORE enabling hide CSS
-    // This prevents a flash where content goes invisible then visible again
+    // Mark elements already in the viewport as visible before re-enabling the hide CSS
     all.forEach((el) => {
       if (el.getBoundingClientRect().top < vh * 1.1) {
         inView.add(el);
@@ -19,7 +33,7 @@ export default function AnimationProvider() {
       }
     });
 
-    // Now enable the opacity-0 CSS for everything not yet visible
+    // Re-enable opacity:0 only for elements that are off-screen
     root.classList.add("reveal-ready");
 
     const observer = new IntersectionObserver(
@@ -41,7 +55,7 @@ export default function AnimationProvider() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]); // Re-runs on every route change
 
   return null;
 }
