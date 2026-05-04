@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const coreStack = [
   "Python",
   "PySpark",
@@ -65,13 +67,27 @@ export default function AboutPage() {
   return (
     <div className="pageStack">
       <section className="pageHero">
-        <p className="eyebrow">About</p>
-        <h1 className="pageTitle">Data + AI engineer with enterprise delivery experience and a strong ML engineering foundation.</h1>
-        <p className="sectionBody narrow">
-          I build dependable data workflows and intelligent AI-powered systems — from raw ETL to RAG pipelines, real-time
-          feature stores, and LLM-integrated applications. My work bridges traditional data engineering with modern AI
-          infrastructure.
-        </p>
+        <div className="pageHeroLayout">
+          <div>
+            <p className="eyebrow">About</p>
+            <h1 className="pageTitle">Data + AI engineer with enterprise delivery experience and a strong ML engineering foundation.</h1>
+            <p className="sectionBody narrow">
+              I build dependable data workflows and intelligent AI-powered systems — from raw ETL to RAG pipelines, real-time
+              feature stores, and LLM-integrated applications. My work bridges traditional data engineering with modern AI
+              infrastructure.
+            </p>
+          </div>
+          <div className="pageHeroPortrait">
+            <Image
+              src="/profile.jpg"
+              alt="Leela Krishna Koppolu"
+              width={230}
+              height={280}
+              className="pageHeroPortraitImg"
+              priority
+            />
+          </div>
+        </div>
       </section>
 
       <section className="twoColSection">

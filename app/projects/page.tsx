@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Project = {
   title: string;
   context: string;
@@ -126,12 +128,26 @@ export default function ProjectsPage() {
   return (
     <div className="pageStack">
       <section className="pageHero">
-        <p className="eyebrow">Projects</p>
-        <h1 className="pageTitle">AI and data engineering projects presented as concise case studies.</h1>
-        <p className="sectionBody narrow">
-          These case studies span AI/ML pipeline development, real-time feature engineering, LLM-powered data systems,
-          and traditional enterprise ETL — aligned to Data Engineer, AI/ML Engineer, and Software Engineer roles.
-        </p>
+        <div className="pageHeroLayout">
+          <div>
+            <p className="eyebrow">Projects</p>
+            <h1 className="pageTitle">AI and data engineering projects presented as concise case studies.</h1>
+            <p className="sectionBody narrow">
+              These case studies span AI/ML pipeline development, real-time feature engineering, LLM-powered data systems,
+              and traditional enterprise ETL — aligned to Data Engineer, AI/ML Engineer, and Software Engineer roles.
+            </p>
+          </div>
+          <div className="pageHeroPortrait">
+            <Image
+              src="/profile.jpg"
+              alt="Leela Krishna Koppolu"
+              width={230}
+              height={280}
+              className="pageHeroPortraitImg"
+              priority
+            />
+          </div>
+        </div>
       </section>
 
       <section className="caseStudyList">

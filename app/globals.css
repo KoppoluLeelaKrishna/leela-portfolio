@@ -430,6 +430,38 @@ a {
   padding: 14px 4px 4px;
 }
 
+.pageHeroLayout {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.pageHeroPortrait {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  background: #ddd1bf;
+  flex-shrink: 0;
+  animation: heroItemIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+}
+
+.pageHeroPortraitImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 720px) {
+  .pageHeroLayout {
+    grid-template-columns: 1fr 110px;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
 .sectionIntro {
   margin-bottom: 18px;
 }

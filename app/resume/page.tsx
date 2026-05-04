@@ -1,15 +1,30 @@
+import Image from "next/image";
 import ResumeChat from "@/components/ResumeChat";
 
 export default function ResumePage() {
   return (
     <div className="pageStack">
       <section className="pageHero">
-        <p className="eyebrow">Resume</p>
-        <h1 className="pageTitle">Everything a recruiter needs — data engineering, AI/ML, and software engineering background in one place.</h1>
-        <p className="sectionBody narrow">
-          Access the latest resume directly, review a quick summary of fit, or ask ASSIST AI any question about skills,
-          AI projects, tools, and experience across all target roles.
-        </p>
+        <div className="pageHeroLayout">
+          <div>
+            <p className="eyebrow">Resume</p>
+            <h1 className="pageTitle">Everything a recruiter needs — data engineering, AI/ML, and software engineering background in one place.</h1>
+            <p className="sectionBody narrow">
+              Access the latest resume directly, review a quick summary of fit, or ask ASSIST AI any question about skills,
+              AI projects, tools, and experience across all target roles.
+            </p>
+          </div>
+          <div className="pageHeroPortrait">
+            <Image
+              src="/profile.jpg"
+              alt="Leela Krishna Koppolu"
+              width={230}
+              height={280}
+              className="pageHeroPortraitImg"
+              priority
+            />
+          </div>
+        </div>
       </section>
 
       <section className="twoColSection">

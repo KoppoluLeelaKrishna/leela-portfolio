@@ -1,13 +1,29 @@
+import Image from "next/image";
+
 export default function ContactPage() {
   return (
     <div className="pageStack">
       <section className="pageHero">
-        <p className="eyebrow">Contact</p>
-        <h1 className="pageTitle">Open to recruiter outreach for data engineering, AI/ML engineering, and software engineering roles.</h1>
-        <p className="sectionBody narrow">
-          Email or LinkedIn are the fastest ways to reach me. I am based in Dallas, Texas and open to relocation for the
-          right opportunity.
-        </p>
+        <div className="pageHeroLayout">
+          <div>
+            <p className="eyebrow">Contact</p>
+            <h1 className="pageTitle">Open to recruiter outreach for data engineering, AI/ML engineering, and software engineering roles.</h1>
+            <p className="sectionBody narrow">
+              Email or LinkedIn are the fastest ways to reach me. I am based in Dallas, Texas and open to relocation for the
+              right opportunity.
+            </p>
+          </div>
+          <div className="pageHeroPortrait">
+            <Image
+              src="/profile.jpg"
+              alt="Leela Krishna Koppolu"
+              width={230}
+              height={280}
+              className="pageHeroPortraitImg"
+              priority
+            />
+          </div>
+        </div>
       </section>
 
       <section className="twoColSection">
