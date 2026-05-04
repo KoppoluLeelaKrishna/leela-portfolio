@@ -3,28 +3,29 @@ import Link from "next/link";
 import ResumeChat from "@/components/ResumeChat";
 
 const recruiterSignals = [
-  "4+ years across data engineering, ETL delivery, and analytics support",
+  "4+ years across data engineering, AI/ML pipelines, and analytics delivery",
   "Enterprise experience spanning Walmart, Truist, and Infosys",
-  "AWS, Azure, PySpark, SQL, Airflow, Databricks, and Snowflake",
+  "AWS, Azure, PySpark, SQL, Airflow, Databricks, Snowflake, and Kafka",
+  "AI/ML stack: LangChain, RAG, vector databases, LLM APIs, MLflow, SageMaker",
   "M.S. in Computer Science from The University of Texas at Arlington",
 ];
 
 const priorityCards = [
   {
+    title: "AI-augmented data pipelines",
+    body: "Building intelligent pipelines that integrate LLMs, RAG architectures, and embedding workflows alongside traditional ETL to unlock AI-ready data products.",
+  },
+  {
     title: "Production reliability",
-    body: "Focused on stable scheduled pipelines, validation checkpoints, and recurring delivery that reporting teams can trust.",
+    body: "Focused on stable scheduled pipelines, validation checkpoints, and recurring delivery that reporting teams and ML models can trust.",
   },
   {
     title: "Cloud platform range",
-    body: "Comfortable operating across AWS and Azure environments depending on enterprise stack, governance, and team needs.",
+    body: "Comfortable operating across AWS and Azure environments — including SageMaker, Databricks, and managed AI services — depending on enterprise stack.",
   },
   {
     title: "Business alignment",
-    body: "Work is shaped around reporting readiness, downstream usability, and clear handoff to analytics consumers.",
-  },
-  {
-    title: "Practical engineering judgment",
-    body: "Delivery style emphasizes maintainability, orchestration clarity, and clean transformation logic over unnecessary complexity.",
+    body: "Work is shaped around reporting readiness, downstream usability, and AI-ready data structures that unlock intelligence for analytics consumers.",
   },
 ];
 
@@ -70,7 +71,7 @@ const hiringChecklist = [
 const spotlightMetrics = [
   { label: "Experience", value: "4+ years" },
   { label: "Cloud focus", value: "AWS + Azure" },
-  { label: "Core stack", value: "PySpark, SQL, Airflow" },
+  { label: "AI stack", value: "LangChain, RAG, LLMs" },
   { label: "Location", value: "Dallas, TX" },
 ];
 
@@ -79,15 +80,15 @@ export default function HomePage() {
     <div className="pageStack">
       <section className="heroSection">
         <div className="heroCopy">
-          <div className="eyebrow">Data engineer portfolio</div>
-          <div className="heroBadge">Open to data engineering and cloud pipeline roles</div>
+          <div className="eyebrow">Data + AI engineer portfolio</div>
+          <div className="heroBadge">Open to Data Engineering, AI/ML Engineering, and Software Engineering roles</div>
           <h1 className="heroTitle">
-            Professional data engineer focused on cloud pipelines, production ETL, and analytics-ready delivery.
+            Data and AI engineer building intelligent pipelines, cloud ETL, and LLM-powered data systems.
           </h1>
           <p className="heroSub">
-            I build and support enterprise data workflows across AWS and Azure with hands-on experience in PySpark, SQL,
-            Airflow, Databricks, Snowflake, and reporting support. My work centers on reliable pipelines, scalable
-            transformation logic, and datasets that are ready for business use.
+            I build enterprise data workflows and AI-augmented pipelines across AWS and Azure with hands-on experience in
+            PySpark, SQL, Airflow, Databricks, Snowflake, LangChain, RAG architectures, and LLM APIs. My work spans
+            reliable ETL delivery, real-time ML feature engineering, and intelligent data systems ready for business use.
           </p>
 
           <div className="heroActions">
@@ -146,7 +147,7 @@ export default function HomePage() {
             <div className="portraitMeta">
               <div>
                 <p className="metaLabel">Target roles</p>
-                <p className="metaValue">Data Engineer, Cloud Data Engineer, ETL Developer</p>
+                <p className="metaValue">Data Engineer, AI/ML Engineer, Software Engineer, Data Analyst</p>
               </div>
               <div>
                 <p className="metaLabel">Location</p>
@@ -225,10 +226,11 @@ export default function HomePage() {
       <section className="section recruiterCta">
         <div>
           <p className="eyebrow">Next step</p>
-          <h2 className="sectionTitle">Available for data engineering opportunities with teams building reliable cloud data platforms.</h2>
+          <h2 className="sectionTitle">Available for data engineering, AI/ML, and software engineering opportunities.</h2>
           <p className="sectionBody">
-            Review the resume, project case studies, and contact page for the fastest qualification pass. If you want a
-            concise walkthrough of cloud pipelines, orchestration, or reporting support experience, contact me directly.
+            Review the resume, AI project case studies, and contact page for the fastest qualification pass. If you want
+            a concise walkthrough of cloud pipelines, RAG architectures, LLM integrations, or ML feature engineering
+            experience, contact me directly.
           </p>
         </div>
         <div className="heroActions">
