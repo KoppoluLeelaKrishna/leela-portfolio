@@ -87,7 +87,7 @@ export default function HomePage() {
           <div className="heroActions">
             <a
               className="btn btnPrimary"
-              href="/Resume_Data%20Engineer_Leela%20Krishna%20Koppolu_2026.pdf"
+              href="/Leela_Krishna_Koppolu_Resume_.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
