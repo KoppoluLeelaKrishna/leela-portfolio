@@ -4,7 +4,7 @@ import PortraitCard from "@/components/PortraitCard";
 
 const recruiterSignals = [
   "4+ years across data engineering, AI/ML pipelines, and analytics delivery",
-  "Enterprise experience spanning Walmart, Truist, and Infosys",
+  "Enterprise experience at Keurig Dr Pepper and Deloitte across banking, retail, and CPG",
   "AWS, Azure, PySpark, SQL, Airflow, Databricks, Snowflake, and Kafka",
   "AI/ML stack: LangChain, RAG, vector databases, LLM APIs, MLflow, SageMaker",
   "M.S. in Computer Science from The University of Texas at Arlington",
@@ -31,25 +31,18 @@ const priorityCards = [
 
 const experience = [
   {
-    company: "Walmart",
+    company: "Keurig Dr Pepper",
+    role: "AI Data Engineer",
+    period: "Oct 2024 – Present",
+    body:
+      "Building petabyte-scale ETL and feature pipelines on PySpark, Databricks, and Snowflake; designing RAG pipelines and LLM-powered applications with Amazon Bedrock and Hugging Face; maintaining a centralized feature store for batch and real-time ML inference; orchestrating ELT and ML workflows with Airflow and Unity Catalog.",
+  },
+  {
+    company: "Deloitte",
     role: "Data Engineer",
-    period: "Dec 2024 - Present",
+    period: "Jun 2020 – Dec 2022",
     body:
-      "Build and support AWS-based data pipelines, PySpark ETL workflows, and reporting-ready datasets using SQL, Airflow, Databricks, and Snowflake.",
-  },
-  {
-    company: "Truist",
-    role: "Information Engineer Intern",
-    period: "Mar 2023 - Nov 2023",
-    body:
-      "Supported ETL scheduling, monitoring, validation, and dependency management for business-facing datasets and recurring enterprise reporting.",
-  },
-  {
-    company: "Infosys",
-    role: "Software Engineer",
-    period: "Jan 2021 - Dec 2022",
-    body:
-      "Worked in a data-engineering-focused role across AWS and Azure, building integration pipelines, PySpark transformations, and analytics support workflows.",
+      "Designed end-to-end AWS ETL pipelines using S3, Glue, Lambda, Step Functions, and Redshift; implemented Airflow orchestration for hundreds of DAGs; built data-validation frameworks with Great Expectations; modeled star-schema warehouses in Redshift and Snowflake with SCD Type 1 and 2 supporting enterprise reporting for hundreds of analysts.",
   },
 ];
 

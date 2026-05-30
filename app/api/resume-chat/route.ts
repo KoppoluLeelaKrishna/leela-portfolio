@@ -30,7 +30,7 @@ Response rules:
 - For project questions, use "Project", "What I built", and "Business value or outcome".
 - For recruiter summary questions, answer in 4 to 6 lines max and mention both traditional DE and AI/ML capabilities.
 - For experience questions, summarize role, stack, responsibility, and business outcome.
-- If asked about current work, focus on my Walmart role and my AI/ML project work.
+- If asked about current work, focus on my Keurig Dr Pepper role and my AI/ML project work.
 - If asked about education, answer in 1 to 2 lines.
 - If asked which roles I am targeting, clearly state: Data Engineer, AI/ML Engineer, Software Engineer, and Data Analyst.
 - If information is not in the provided context, say:
@@ -112,31 +112,24 @@ Project 3: LLM-Powered Data Quality and Anomaly Detection Engine
 
 Professional experience:
 
-Walmart | Data Engineer | Dec 2024 - Present
-- Design and maintain AWS-based data pipelines for scalable ingestion, transformation, and reporting workflows
-- Build ETL processes using PySpark and SQL for structured and semi-structured data
-- Optimize workflows for performance, reliability, and data quality across enterprise datasets
-- Support data modeling and integration to improve accessibility of business-critical data
-- Collaborate with analysts, engineers, and business stakeholders
-- Work with orchestration frameworks to automate and monitor recurring data jobs
-- Applying AI/ML pipeline patterns including feature engineering and LLM-assisted quality tooling alongside core ETL work
-- Tech: AWS, PySpark, SQL, ETL, Airflow, Databricks, Snowflake, Python
+Keurig Dr Pepper | AI Data Engineer | Oct 2024 - Present
+- Building AWS-based data and AI engineering solutions powering ML and GenAI use cases across sales, supply chain, manufacturing, and consumer analytics
+- Developing petabyte-scale ETL and feature pipelines using PySpark on Databricks, AWS Glue, and Snowflake to deliver analytics-ready datasets at scale
+- Designing RAG pipelines and LLM-powered applications integrating Snowflake, S3, and vector databases (Pinecone, FAISS) with embeddings from Amazon Bedrock and Hugging Face models
+- Building a centralized feature store on Databricks for batch and real-time ML inference, ensuring training and serving consistency with point-in-time correct joins
+- Orchestrating ELT and ML training workflows with Apache Airflow, integrating S3, Kafka, microservices, and partner APIs into curated lakehouse zones with full lineage in Unity Catalog
+- Tuning Spark and Snowflake workloads through partition tuning, broadcast joins, clustering keys, and materialized views, driving runtime and warehouse-cost reductions
+- Modeling dimensional data marts in Snowflake using dbt with SCD Type 2 history, conformed dimensions, and fact-grain design to support executive reporting and self-service analytics
+- Tech: AWS, PySpark, Databricks, Snowflake, Airflow, Kafka, dbt, Amazon Bedrock, Pinecone, FAISS, LangChain, Unity Catalog, Python
 
-Truist | Information Engineer Intern | Mar 2023 - Nov 2023
-- Supported AWS-based ETL development, pipeline monitoring, and data analysis
-- Built and enhanced ETL pipelines moving data into analytics-ready datasets
-- Assisted with scheduling, dependency handling, validation, and issue resolution
-- Used SQL to validate transformed datasets and improve reporting accuracy
-- Contributed to workflow optimization and documentation
-- Tech: AWS, SQL, ETL, PySpark, Airflow, Data Analysis
-
-Infosys | Software Engineer | Jan 2021 - Dec 2022
-- Worked on data engineering and software engineering assignments across AWS and Azure environments
-- Developed and supported pipelines for ingesting, transforming, and loading data into reporting systems
-- Used SQL and PySpark for processing, cleansing, and transformation
-- Helped build reusable ETL components and supported validation and troubleshooting
-- Delivered reliable datasets for analytics and operational reporting
-- Tech: AWS, Azure, PySpark, SQL, ETL, Databricks, Python
+Deloitte | Data Engineer | Jun 2020 - Dec 2022
+- Designed and built end-to-end AWS ETL pipelines using S3, Glue, Lambda, Step Functions, and Redshift to move client data from mainframe, Oracle, and SQL Server into analytics-ready datasets for enterprise reporting and regulatory submissions
+- Implemented Apache Airflow as the orchestration backbone for hundreds of DAGs with standardized patterns, exponential-backoff retries, PagerDuty alerting, and SLA dashboards
+- Built data-validation frameworks using Great Expectations and custom Python checks integrated into Airflow tasks, catching schema drift, null spikes, and referential-integrity violations
+- Tuned PySpark and Snowflake workloads through partition tuning, broadcast hints, clustering keys, and materialized views, cutting runtime and warehouse cost on the most expensive nightly jobs
+- Designed Redshift and Snowflake warehouse models with star schemas, SCD Type 1 and 2, conformed dimensions, and late-arriving dimensions supporting self-service BI for hundreds of analysts
+- Built customer-segmentation and propensity datasets including next-best-action and churn risk, enabling targeted campaigns and uplift on retention and cross-sell metrics
+- Tech: AWS (S3, Glue, Lambda, Step Functions, Redshift), Snowflake, PySpark, Airflow, Great Expectations, Python, SQL
 
 Education:
 I completed my M.S. in Computer Science at The University of Texas at Arlington in December 2024.
