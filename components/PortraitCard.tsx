@@ -65,7 +65,7 @@ export default function PortraitCard() {
       <div className="portraitMeta">
         <div>
           <p className="metaLabel">Target roles</p>
-          <p className="metaValue">Data Engineer, AI/ML Engineer, Software Engineer, Data Analyst</p>
+          <p className="metaValue">AI/ML Engineer, Data Engineer, Software Engineer, Data Analyst</p>
         </div>
         <div>
           <p className="metaLabel">Location</p>

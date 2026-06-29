@@ -17,9 +17,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Leela Krishna Koppolu | Data + AI Engineer Portfolio",
+  title: "Leela Krishna Koppolu | AI & Data Engineer Portfolio",
   description:
-    "Data and AI engineer portfolio — AWS and Azure pipelines, PySpark ETL, LangChain RAG systems, real-time ML feature engineering, LLM integrations, and enterprise analytics delivery.",
+    "AI engineer portfolio — GenAI applications, LangChain RAG pipelines, vector search, real-time ML feature engineering, and the AWS/Databricks/Snowflake data infrastructure behind them.",
 };
 
 export default function RootLayout({

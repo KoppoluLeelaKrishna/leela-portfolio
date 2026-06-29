@@ -105,7 +105,7 @@ const certifications = [
 
 const aiSkillGroups = [
   {
-    role: "Data Engineer — AI/ML",
+    role: "AI/ML Engineer",
     skills: [
       "LangChain",
       "LangGraph",
@@ -160,7 +160,7 @@ export default function AboutPage() {
         <div className="pageHeroLayout">
           <div>
             <p className="eyebrow">About</p>
-            <h1 className="pageTitle">Data + AI engineer with enterprise delivery experience and a strong ML engineering foundation.</h1>
+            <h1 className="pageTitle">AI engineer with deep ML engineering skills and enterprise data delivery experience.</h1>
             <p className="sectionBody narrow">
               I build dependable data workflows and intelligent AI-powered systems — from raw ETL to RAG pipelines, real-time
               feature stores, and LLM-integrated applications. My work bridges traditional data engineering with modern AI

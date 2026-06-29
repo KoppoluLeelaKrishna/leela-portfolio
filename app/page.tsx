@@ -3,7 +3,7 @@ import ResumeChat from "@/components/ResumeChat";
 import PortraitCard from "@/components/PortraitCard";
 
 const recruiterSignals = [
-  "4+ years across data engineering, AI/ML pipelines, and analytics delivery",
+  "4+ years across AI/ML engineering, GenAI applications, and the data infrastructure behind them",
   "Enterprise experience at Keurig Dr Pepper and Deloitte across banking, retail, and enterprise",
   "AWS, Azure, PySpark, SQL, Airflow, Databricks, Snowflake, and Kafka",
   "AI/ML stack: LangChain, RAG, vector databases, LLM APIs, MLflow, SageMaker",
@@ -48,7 +48,7 @@ const experience = [
 
 const hiringChecklist = [
   {
-    title: "Can step into enterprise data workflows",
+    title: "Can step into enterprise AI and data workflows",
     detail: "Experience is already framed around production support, recurring data movement, and reporting-oriented outputs.",
   },
   {
@@ -73,15 +73,16 @@ export default function HomePage() {
     <div className="pageStack">
       <section className="heroSection">
         <div className="heroCopy">
-          <div className="eyebrow">Data + AI engineer portfolio</div>
-          <div className="heroBadge">Open to Data Engineering, AI/ML Engineering, and Software Engineering roles</div>
+          <div className="eyebrow">AI &amp; Data engineer portfolio</div>
+          <div className="heroBadge">Open to AI/ML Engineering, Data Engineering, and Software Engineering roles</div>
           <h1 className="heroTitle">
-            Data and AI engineer building intelligent pipelines, cloud ETL, and LLM-powered data systems.
+            AI engineer building GenAI applications, RAG pipelines, and the data infrastructure behind them.
           </h1>
           <p className="heroSub">
-            I build enterprise data workflows and AI-augmented pipelines across AWS and Azure with hands-on experience in
-            PySpark, SQL, Airflow, Databricks, Snowflake, LangChain, RAG architectures, and LLM APIs. My work spans
-            reliable ETL delivery, real-time ML feature engineering, and intelligent data systems ready for business use.
+            I build AI/ML and GenAI applications — LLM-powered systems, RAG pipelines, vector search, and ML feature
+            engineering — along with the cloud data infrastructure behind them on AWS, Databricks, and Snowflake. My work
+            spans embeddings and retrieval systems, real-time ML feature engineering, and reliable ETL delivery ready for
+            production.
           </p>
 
           <div className="heroActions">
@@ -133,7 +134,7 @@ export default function HomePage() {
       <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">Core strengths</p>
-          <h2 className="sectionTitle">The capabilities I bring to enterprise data engineering teams.</h2>
+          <h2 className="sectionTitle">The capabilities I bring to AI/ML and data engineering teams.</h2>
         </div>
         <div className="featureGrid">
           {priorityCards.map((item, i) => (
@@ -148,7 +149,7 @@ export default function HomePage() {
       <section className="section" data-reveal="">
         <div className="sectionIntro">
           <p className="eyebrow">Experience snapshot</p>
-          <h2 className="sectionTitle">Recent roles aligned with enterprise data engineering and analytics delivery.</h2>
+          <h2 className="sectionTitle">Recent roles aligned with AI/ML engineering and enterprise data delivery.</h2>
         </div>
         <div className="timeline">
           {experience.map((job, i) => (
@@ -194,7 +195,7 @@ export default function HomePage() {
       <section className="section recruiterCta" data-reveal="">
         <div>
           <p className="eyebrow">Next step</p>
-          <h2 className="sectionTitle">Available for data engineering, AI/ML, and software engineering opportunities.</h2>
+          <h2 className="sectionTitle">Available for AI/ML engineering, data engineering, and software engineering opportunities.</h2>
           <p className="sectionBody">
             Review the resume, AI project case studies, and contact page for the fastest qualification pass. If you want
             a concise walkthrough of cloud pipelines, RAG architectures, LLM integrations, or ML feature engineering

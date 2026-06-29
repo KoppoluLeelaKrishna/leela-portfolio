@@ -134,7 +134,7 @@ export default function ProjectsPage() {
             <h1 className="pageTitle">AI and data engineering projects presented as concise case studies.</h1>
             <p className="sectionBody narrow">
               These case studies span AI/ML pipeline development, real-time feature engineering, LLM-powered data systems,
-              and traditional enterprise ETL — aligned to Data Engineer, AI/ML Engineer, and Software Engineer roles.
+              and traditional enterprise ETL — aligned to AI/ML Engineer, Data Engineer, and Software Engineer roles.
             </p>
           </div>
           <div className="pageHeroPortrait">

@@ -8,7 +8,7 @@ export default function ResumePage() {
         <div className="pageHeroLayout">
           <div>
             <p className="eyebrow">Resume</p>
-            <h1 className="pageTitle">Everything a recruiter needs — data engineering, AI/ML, and software engineering background in one place.</h1>
+            <h1 className="pageTitle">Everything a recruiter needs — AI/ML, data engineering, and software engineering background in one place.</h1>
             <p className="sectionBody narrow">
               Access the latest resume directly, review a quick summary of fit, or ask ASSIST AI any question about skills,
               AI projects, tools, and experience across all target roles.
