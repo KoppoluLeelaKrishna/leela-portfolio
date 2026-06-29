@@ -33,14 +33,14 @@ export default function ResumePage() {
           <div className="heroActions">
             <a
               className="btn btnPrimary"
-              href="/Leela_Krishna_Koppolu_Resume_.pdf"
+              href="/Leela_Krishna_Koppolu_Resume_AI_Engineer.pdf"
               download
             >
               Download Resume
             </a>
             <a
               className="btn"
-              href="/Leela_Krishna_Koppolu_Resume_.pdf"
+              href="/Leela_Krishna_Koppolu_Resume_AI_Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -52,10 +52,10 @@ export default function ResumePage() {
         <article className="infoCard" data-reveal="" data-reveal-delay="100">
           <h2>Quick summary</h2>
           <ul className="detailList">
-            <li>4+ years across data engineering, AI/ML pipelines, and analytics delivery</li>
-            <li>AI/ML stack: LangChain, RAG, Pinecone, OpenAI API, Claude API, MLflow, SageMaker</li>
+            <li>AI Engineer with 4+ years across AI/ML, GenAI, and the data infrastructure behind them</li>
+            <li>AI/ML stack: LLMs, RAG, Pinecone, FAISS, Amazon Bedrock, Hugging Face, PyTorch, MLflow, SageMaker</li>
             <li>Data engineering: PySpark, SQL, Airflow, Databricks, Snowflake, Kafka, dbt, AWS, Azure</li>
-            <li>Software engineering: FastAPI, LLM integration, prompt engineering, Docker, CI/CD</li>
+            <li>Certifications: AWS Data Engineer Associate, Databricks Data Engineer Associate, SnowPro Core, dbt Fundamentals</li>
             <li>M.S. in Computer Science from UT Arlington, completed December 2024</li>
           </ul>
         </article>

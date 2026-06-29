@@ -1,19 +1,106 @@
 import Image from "next/image";
 
-const coreStack = [
-  "Python",
-  "PySpark",
-  "SQL",
-  "Airflow",
-  "Databricks",
-  "Snowflake",
-  "AWS",
-  "Azure",
-  "ETL / ELT",
-  "Data Modeling",
-  "dbt",
-  "Kafka",
-  "Reporting Support",
+const skillCategories = [
+  {
+    label: "AI & ML Engineering",
+    skills: [
+      "LLMs",
+      "RAG Pipelines",
+      "Prompt Engineering",
+      "Embeddings",
+      "Semantic / Vector Search",
+      "LangChain",
+      "Hugging Face Transformers",
+      "PyTorch",
+      "scikit-learn",
+      "MLflow",
+      "Feature Store",
+      "Model Serving & Inference",
+      "Vector Databases (Pinecone, FAISS)",
+    ],
+  },
+  {
+    label: "Cloud & ML Platforms",
+    skills: [
+      "AWS SageMaker",
+      "Amazon Bedrock",
+      "S3",
+      "Lambda",
+      "Glue",
+      "EMR",
+      "Redshift",
+      "Kinesis",
+      "Step Functions",
+      "EKS",
+      "CloudWatch",
+      "Azure Databricks",
+      "Data Factory",
+      "Synapse",
+      "Snowflake",
+      "Delta Lake",
+      "Unity Catalog",
+    ],
+  },
+  {
+    label: "Data Engineering",
+    skills: [
+      "Apache Spark",
+      "PySpark",
+      "Spark SQL",
+      "Apache Airflow",
+      "Apache Kafka",
+      "dbt",
+      "AWS Glue",
+      "Azure Data Factory",
+      "Debezium CDC",
+      "AWS DMS",
+      "Great Expectations",
+    ],
+  },
+  {
+    label: "Languages & Frameworks",
+    skills: ["Python", "SQL", "TypeScript", "FastAPI", "Pandas", "Pydantic"],
+  },
+  {
+    label: "Warehousing & Modeling",
+    skills: [
+      "Snowflake",
+      "Redshift",
+      "Star / Snowflake Schemas",
+      "SCD Type 1 & 2",
+      "Conformed Dimensions",
+      "Fact-Grain Design",
+      "Materialized Views",
+    ],
+  },
+  {
+    label: "MLOps, DevOps & BI",
+    skills: [
+      "Docker",
+      "Kubernetes (EKS)",
+      "Terraform",
+      "GitHub Actions",
+      "Jenkins",
+      "Azure DevOps",
+      "Prometheus",
+      "Grafana",
+      "OpenLineage",
+      "PagerDuty",
+      "Power BI (DAX, RLS)",
+      "Tableau",
+      "PostgreSQL",
+      "Oracle",
+      "SQL Server",
+      "MySQL",
+    ],
+  },
+];
+
+const certifications = [
+  "AWS Certified Data Engineer – Associate",
+  "Databricks Certified Data Engineer Associate",
+  "SnowPro Core",
+  "dbt Fundamentals",
 ];
 
 const aiSkillGroups = [
@@ -23,8 +110,11 @@ const aiSkillGroups = [
       "LangChain",
       "LangGraph",
       "RAG Architecture",
-      "Vector Databases (Pinecone, ChromaDB)",
+      "Vector Databases (Pinecone, FAISS, ChromaDB)",
       "Embedding Pipelines",
+      "Amazon Bedrock",
+      "Hugging Face Transformers",
+      "PyTorch",
       "OpenAI API",
       "Anthropic Claude API",
       "AWS SageMaker",
@@ -104,24 +194,33 @@ export default function AboutPage() {
         <article className="infoCard" data-reveal="" data-reveal-delay="100">
           <h2>Professional summary</h2>
           <p className="sectionBody">
-            My background combines hands-on enterprise data delivery with deep ML engineering skills. I completed my
-            M.S. in Computer Science at The University of Texas at Arlington in December 2024, with focus areas in data
-            engineering, distributed systems, machine learning, and cloud computing. I actively build with LLM APIs,
-            vector databases, and AI orchestration frameworks alongside traditional ETL and pipeline tooling.
+            I am an AI Engineer with 4+ years of experience building AI/ML and GenAI applications and the data
+            infrastructure behind them across banking, retail, and enterprise. I combine production data delivery with
+            deep ML engineering — LLM-powered systems, RAG pipelines, vector search, feature engineering, and model
+            serving with deep AWS expertise — alongside data-quality engineering and Spark/SQL tuning that reduces
+            latency and cost. I completed my M.S. in Computer Science at The University of Texas at Arlington in
+            December 2024.
           </p>
         </article>
       </section>
 
       <section className="section" data-reveal="">
         <div className="sectionIntro">
-          <p className="eyebrow">Data engineering stack</p>
-          <h2 className="sectionTitle">Core tools and platforms used in production data engineering work.</h2>
+          <p className="eyebrow">Technical skills</p>
+          <h2 className="sectionTitle">Full technical stack across AI/ML, cloud, data engineering, and modeling.</h2>
         </div>
-        <div className="badgeCloud">
-          {coreStack.map((item) => (
-            <span className="badge" key={item}>
-              {item}
-            </span>
+        <div className="aiSkillGrid">
+          {skillCategories.map((group, i) => (
+            <article className="aiSkillCard" key={group.label} data-reveal="scale" data-reveal-delay={String(i * 80)}>
+              <p className="aiSkillRole">{group.label}</p>
+              <div className="badgeCloud">
+                {group.skills.map((skill) => (
+                  <span className="badge" key={skill}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </article>
           ))}
         </div>
       </section>
@@ -143,6 +242,20 @@ export default function AboutPage() {
                 ))}
               </div>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" data-reveal="">
+        <div className="sectionIntro">
+          <p className="eyebrow">Certifications</p>
+          <h2 className="sectionTitle">Industry certifications across cloud, data, and analytics engineering.</h2>
+        </div>
+        <div className="badgeCloud">
+          {certifications.map((item) => (
+            <span className="badge" key={item}>
+              {item}
+            </span>
           ))}
         </div>
       </section>

@@ -4,7 +4,7 @@ import PortraitCard from "@/components/PortraitCard";
 
 const recruiterSignals = [
   "4+ years across data engineering, AI/ML pipelines, and analytics delivery",
-  "Enterprise experience at Keurig Dr Pepper and Deloitte across banking, retail, and CPG",
+  "Enterprise experience at Keurig Dr Pepper and Deloitte across banking, retail, and enterprise",
   "AWS, Azure, PySpark, SQL, Airflow, Databricks, Snowflake, and Kafka",
   "AI/ML stack: LangChain, RAG, vector databases, LLM APIs, MLflow, SageMaker",
   "M.S. in Computer Science from The University of Texas at Arlington",
@@ -32,17 +32,17 @@ const priorityCards = [
 const experience = [
   {
     company: "Keurig Dr Pepper",
-    role: "AI Data Engineer",
+    role: "AI Engineer",
     period: "Oct 2024 – Present",
     body:
-      "Building petabyte-scale ETL and feature pipelines on PySpark, Databricks, and Snowflake; designing RAG pipelines and LLM-powered applications with Amazon Bedrock and Hugging Face; maintaining a centralized feature store for batch and real-time ML inference; orchestrating ELT and ML workflows with Airflow and Unity Catalog.",
+      "Building AI and GenAI applications on AWS across sales, supply chain, manufacturing, and consumer analytics; designing RAG pipelines and LLM-powered applications with Amazon Bedrock, Hugging Face, Pinecone, and FAISS; maintaining a centralized feature store on Databricks for batch and real-time ML inference; orchestrating ML training and ELT workflows with Airflow and Unity Catalog.",
   },
   {
     company: "Deloitte",
-    role: "Data Engineer",
+    role: "Software Engineer",
     period: "Jun 2020 – Dec 2022",
     body:
-      "Designed end-to-end AWS ETL pipelines using S3, Glue, Lambda, Step Functions, and Redshift; implemented Airflow orchestration for hundreds of DAGs; built data-validation frameworks with Great Expectations; modeled star-schema warehouses in Redshift and Snowflake with SCD Type 1 and 2 supporting enterprise reporting for hundreds of analysts.",
+      "Designed end-to-end AWS ETL pipelines using S3, Glue, Lambda, Step Functions, and Redshift; implemented Airflow orchestration for hundreds of DAGs with PagerDuty alerting and SLA dashboards; tuned PySpark and Snowflake workloads for runtime and cost; modeled star-schema warehouses with SCD Type 1 and 2 supporting enterprise reporting for hundreds of analysts.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function HomePage() {
           <div className="heroActions">
             <a
               className="btn btnPrimary"
-              href="/Leela_Krishna_Koppolu_Resume_.pdf"
+              href="/Leela_Krishna_Koppolu_Resume_AI_Engineer.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

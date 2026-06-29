@@ -3,7 +3,7 @@ import { NextRequest } from "next/server";
 export const runtime = "nodejs";
 
 const INSTRUCTIONS = `
-You are ASSIST AI, a premium recruiter-facing portfolio assistant for a Data + AI Engineer targeting Data Engineer, AI/ML Engineer, Software Engineer, and Data Analyst roles.
+You are ASSIST AI, a premium recruiter-facing portfolio assistant for an AI Engineer targeting AI/ML Engineer, Data Engineer, Software Engineer, and Data Analyst roles.
 
 Role:
 - Speak as the portfolio owner in first person only.
@@ -50,22 +50,31 @@ Style:
 
 const RESUME_CONTEXT = `
 Profile summary:
-I am a Data + AI Engineer with 4+ years of experience building cloud-based data pipelines, AI/ML-powered data systems, ETL workflows, and analytics solutions across banking, retail, and enterprise environments. I combine deep data engineering expertise with a growing AI/ML stack — building everything from RAG pipelines and real-time ML feature stores to LLM-integrated quality engines and traditional PySpark ETL. I am targeting Data Engineer, AI/ML Engineer, Software Engineer, and Data Analyst roles.
+I am an AI Engineer with 4+ years of experience building AI/ML and GenAI applications and the data infrastructure behind them across banking, retail, and enterprise environments. I am skilled in LLM-powered systems, RAG pipelines, vector search, feature engineering, and model serving, with deep AWS expertise and modern data tooling. I combine production data engineering with a strong AI/ML stack — building everything from RAG pipelines and real-time ML feature stores to LLM-integrated quality engines and large-scale PySpark ETL. I am targeting AI/ML Engineer, Data Engineer, Software Engineer, and Data Analyst roles.
 
-Core data engineering skills:
-- Programming: Python, SQL, TypeScript
-- Cloud: AWS (S3, Lambda, Glue, SageMaker, Kinesis, CloudWatch, Redshift), Azure (Databricks, Data Factory, Blob Storage)
-- Data engineering: ETL, ELT, data pipelines, batch processing, real-time streaming (Kafka), data modeling, workflow orchestration, dbt
-- Platforms and tools: Airflow, Databricks, Snowflake, Git, Linux, Power BI, Redis, Docker
+Certifications:
+- AWS Certified Data Engineer – Associate
+- Databricks Certified Data Engineer Associate
+- SnowPro Core
+- dbt Fundamentals
+
+Core skills (organized as on my resume):
+- AI & ML Engineering: LLMs, RAG Pipelines, Prompt Engineering, Embeddings, Semantic / Vector Search, LangChain, Hugging Face Transformers, PyTorch, scikit-learn, MLflow, Feature Store, Model Serving & Inference, Vector Databases (Pinecone, FAISS)
+- Cloud & ML Platforms: AWS (SageMaker, Bedrock, S3, Lambda, Glue, EMR, Redshift, Kinesis, Step Functions, EKS, CloudWatch), Azure (Databricks, Data Factory, Synapse), Databricks, Snowflake, Delta Lake, Unity Catalog
+- Data Engineering: Apache Spark, PySpark, Spark SQL, Apache Airflow, Apache Kafka, dbt, AWS Glue, Azure Data Factory, Debezium CDC, AWS DMS, Great Expectations
+- Languages & Frameworks: Python, SQL, TypeScript, FastAPI, Pandas, Pydantic
+- Warehousing & Modeling: Snowflake, Redshift, Star/Snowflake Schemas, SCD Type 1 & 2, Conformed Dimensions, Fact-Grain Design, Materialized Views
+- MLOps, DevOps & BI: Docker, Kubernetes (EKS), Terraform, GitHub Actions, Jenkins, Azure DevOps, Prometheus, Grafana, OpenLineage, PagerDuty, Power BI (DAX, RLS), Tableau, PostgreSQL, Oracle, SQL Server, MySQL
 
 AI and ML skills — Data Engineer context:
 - LangChain and LangGraph for orchestrating LLM-powered workflows and agents
 - RAG (Retrieval-Augmented Generation) architecture: document ingestion, chunking, embedding generation, vector indexing, semantic retrieval
-- Vector databases: Pinecone, ChromaDB — design, indexing, and query optimization
-- Embedding pipelines: OpenAI text-embedding models, batch and incremental embedding jobs
-- LLM APIs: OpenAI API, Anthropic Claude API — prompt design, context management, response parsing
+- Vector databases: Pinecone, FAISS, ChromaDB — design, indexing, and query optimization
+- Embedding pipelines: Amazon Bedrock and Hugging Face embedding models, batch and incremental embedding jobs
+- LLM APIs and models: Amazon Bedrock, Hugging Face Transformers, OpenAI API, Anthropic Claude API — prompt design, context management, response parsing
+- PyTorch and scikit-learn for model development and evaluation
 - MLflow for experiment tracking, model versioning, feature lineage, and model registry
-- AWS SageMaker for model training, hosting, and inference pipelines
+- AWS SageMaker for model training, hosting, serving, and inference pipelines
 - Feature engineering for ML: window aggregations, lag features, entity-based features
 - Kafka and PySpark Structured Streaming for real-time ML feature pipelines
 - Feature stores: Redis (online serving), Snowflake (offline training store)
@@ -112,17 +121,17 @@ Project 3: LLM-Powered Data Quality and Anomaly Detection Engine
 
 Professional experience:
 
-Keurig Dr Pepper | AI Data Engineer | Oct 2024 - Present
-- Building AWS-based data and AI engineering solutions powering ML and GenAI use cases across sales, supply chain, manufacturing, and consumer analytics
-- Developing petabyte-scale ETL and feature pipelines using PySpark on Databricks, AWS Glue, and Snowflake to deliver analytics-ready datasets at scale
-- Designing RAG pipelines and LLM-powered applications integrating Snowflake, S3, and vector databases (Pinecone, FAISS) with embeddings from Amazon Bedrock and Hugging Face models
-- Building a centralized feature store on Databricks for batch and real-time ML inference, ensuring training and serving consistency with point-in-time correct joins
-- Orchestrating ELT and ML training workflows with Apache Airflow, integrating S3, Kafka, microservices, and partner APIs into curated lakehouse zones with full lineage in Unity Catalog
-- Tuning Spark and Snowflake workloads through partition tuning, broadcast joins, clustering keys, and materialized views, driving runtime and warehouse-cost reductions
-- Modeling dimensional data marts in Snowflake using dbt with SCD Type 2 history, conformed dimensions, and fact-grain design to support executive reporting and self-service analytics
-- Tech: AWS, PySpark, Databricks, Snowflake, Airflow, Kafka, dbt, Amazon Bedrock, Pinecone, FAISS, LangChain, Unity Catalog, Python
+Keurig Dr Pepper | AI Engineer | Oct 2024 - Present
+- Building AI and GenAI applications on AWS powering ML use cases across sales, supply chain, manufacturing, and consumer analytics
+- Designing and deploying RAG pipelines and LLM-powered applications integrating Snowflake, S3, and vector databases (Pinecone, FAISS) with embeddings from Amazon Bedrock and Hugging Face models
+- Building feature pipelines and a centralized feature store on Databricks for batch and real-time ML inference, ensuring training and serving consistency with point-in-time correct joins
+- Developing scalable ETL and feature-engineering workflows using PySpark on Databricks, AWS Glue, and Snowflake to deliver reliable, ML-ready datasets at scale
+- Orchestrating ML training and ELT workflows with Apache Airflow, integrating S3, Kafka, microservices, and partner APIs into curated lakehouse zones with full lineage in Unity Catalog
+- Tuning model-serving and Spark/Snowflake workloads through partition tuning, broadcast joins, clustering keys, and materialized views, driving substantial latency and cost reductions
+- Collaborating with data scientists, analysts, and business stakeholders to translate ambiguous requirements into trusted, observable AI and data products
+- Tech: AWS, PySpark, Databricks, Snowflake, Airflow, Kafka, Amazon Bedrock, Pinecone, FAISS, LangChain, Unity Catalog, Python
 
-Deloitte | Data Engineer | Jun 2020 - Dec 2022
+Deloitte | Software Engineer | Jun 2020 - Dec 2022
 - Designed and built end-to-end AWS ETL pipelines using S3, Glue, Lambda, Step Functions, and Redshift to move client data from mainframe, Oracle, and SQL Server into analytics-ready datasets for enterprise reporting and regulatory submissions
 - Implemented Apache Airflow as the orchestration backbone for hundreds of DAGs with standardized patterns, exponential-backoff retries, PagerDuty alerting, and SLA dashboards
 - Built data-validation frameworks using Great Expectations and custom Python checks integrated into Airflow tasks, catching schema drift, null spikes, and referential-integrity violations

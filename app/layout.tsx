@@ -38,7 +38,7 @@ export default function RootLayout({
           <footer className="footer">
             <div className="footerInner">
               <span>&copy; {new Date().getFullYear()} Leela Krishna Koppolu</span>
-              <span className="muted">Data Engineer based in Dallas, Texas</span>
+              <span className="muted">AI &amp; Data Engineer based in Dallas, Texas</span>
             </div>
           </footer>
           <FloatingAssist />

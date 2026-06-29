@@ -15,7 +15,7 @@ export default function Nav() {
         <Link className="brand" href="/">
           <span className="brandOverline">Portfolio</span>
           <strong>Leela Krishna Koppolu</strong>
-          <span>Data Engineer for cloud, ETL, and analytics delivery</span>
+          <span>AI &amp; Data Engineer for GenAI, cloud ETL, and ML pipelines</span>
         </Link>
 
         <nav className="links" aria-label="Site navigation">
@@ -28,7 +28,7 @@ export default function Nav() {
 
         <a
           className="btn btnPrimary navCta"
-          href="/Resume_Data%20Engineer_Leela%20Krishna%20Koppolu_2026.pdf"
+          href="/Leela_Krishna_Koppolu_Resume_AI_Engineer.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
