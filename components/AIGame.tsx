@@ -2181,21 +2181,24 @@ function rankFor(score: number) {
 }
 
 const LIVES_START = 3;
+const JOB_LIVES = 5; // more forgiving so the 50-question marathon is completable
+const JOB_RUN_LEN = 50; // Job Prep marathon length
 const TIME_PER_Q = 22; // seconds
 const STORAGE_KEY = "aiml-gauntlet-best-v1";
 
 type Phase = "menu" | "playing" | "over";
 
 /* ─── Levels ───
-   Basic/Intermediate/Advanced map to a difficulty tier (across topics);
+   Basic/Intermediate/Advanced map to a difficulty tier (across topics).
+   Job Prep is a fixed 50-question marathon across every core job concept.
    Interview is its own track built from the interview question bank. */
-type LevelId = "basic" | "intermediate" | "advanced" | "interview";
+type LevelId = "basic" | "intermediate" | "advanced" | "job" | "interview";
 
 type Level = {
   id: LevelId;
   label: string;
   icon: string;
-  difficulty: Difficulty | null; // null = pull from the interview category instead
+  difficulty: Difficulty | null; // null = special track (job / interview)
   blurb: string;
 };
 
@@ -2203,6 +2206,7 @@ const LEVELS: Level[] = [
   { id: "basic", label: "Basic", icon: "🌱", difficulty: "easy", blurb: "Core definitions and fundamentals — a solid warm-up." },
   { id: "intermediate", label: "Intermediate", icon: "⚡", difficulty: "medium", blurb: "Applied concepts, metrics, and everyday tradeoffs." },
   { id: "advanced", label: "Advanced", icon: "🔥", difficulty: "hard", blurb: "Deep mechanics, math, and tricky edge cases." },
+  { id: "job", label: "Job Prep", icon: "💼", difficulty: null, blurb: "A 50-question marathon across every core concept AI/ML jobs test." },
   { id: "interview", label: "Interview", icon: "🎯", difficulty: null, blurb: "Real AI/ML engineer interview questions & scenarios." },
 ];
 
@@ -2241,6 +2245,10 @@ function filterPool(level: LevelId, cats: Set<CategoryId>): Question[] {
   if (level === "interview") {
     return QUESTIONS.filter((q) => q.category === "interview");
   }
+  if (level === "job") {
+    // Every core job concept — all topical questions (interview scenarios excluded).
+    return QUESTIONS.filter((q) => q.category !== "interview");
+  }
   const diff = LEVEL_MAP[level].difficulty;
   return QUESTIONS.filter(
     (q) =>
@@ -2248,6 +2256,11 @@ function filterPool(level: LevelId, cats: Set<CategoryId>): Question[] {
       q.difficulty === diff &&
       (cats.size === 0 || cats.has(q.category))
   );
+}
+
+/* Levels that run a fixed-length queue and end when it's done (vs. endless). */
+function isFiniteLevel(level: LevelId): boolean {
+  return level === "job";
 }
 
 export default function AIGame() {
@@ -2261,6 +2274,7 @@ export default function AIGame() {
   const [streak, setStreak] = useState(0);
   const [bestStreak, setBestStreak] = useState(0);
   const [lives, setLives] = useState(LIVES_START);
+  const [livesMax, setLivesMax] = useState(LIVES_START);
   const [answered, setAnswered] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
 
@@ -2296,14 +2310,21 @@ export default function AIGame() {
     }
   }, []);
 
-  /* Build a shuffled queue for the chosen level. The Interview track spans
-     difficulties, so it's ramped easy→hard; single-difficulty levels are
-     simply shuffled. */
+  /* Build a shuffled queue for the chosen level. Tracks that span difficulties
+     (Interview, Job Prep) are ramped easy→hard; single-difficulty levels are
+     simply shuffled. Job Prep is capped to a fixed marathon length. */
   const buildQueue = useCallback((lvl: LevelId, cats: Set<CategoryId>): ServedQuestion[] => {
     const pool = filterPool(lvl, cats);
+    const buckets: Record<Difficulty, Question[]> = { easy: [], medium: [], hard: [] };
+    for (const q of pool) buckets[q.difficulty].push(q);
+
+    if (lvl === "job") {
+      // Balanced 50-question marathon: sample across difficulties, then ramp easy→hard.
+      const want: Record<Difficulty, number> = { easy: 17, medium: 17, hard: 16 };
+      const pick = (d: Difficulty) => shuffle(buckets[d]).slice(0, want[d]);
+      return [...pick("easy"), ...pick("medium"), ...pick("hard")].map(serveQuestion);
+    }
     if (lvl === "interview") {
-      const buckets: Record<Difficulty, Question[]> = { easy: [], medium: [], hard: [] };
-      for (const q of pool) buckets[q.difficulty].push(q);
       const ordered = [
         ...shuffle(buckets.easy),
         ...shuffle(buckets.medium),
@@ -2318,12 +2339,14 @@ export default function AIGame() {
     if (!level) return;
     const q = buildQueue(level, selectedCats);
     if (q.length === 0) return; // nothing to play
+    const startLives = level === "job" ? JOB_LIVES : LIVES_START;
     setQueue(q);
     setQIndex(0);
     setScore(0);
     setStreak(0);
     setBestStreak(0);
-    setLives(LIVES_START);
+    setLives(startLives);
+    setLivesMax(startLives);
     setAnswered(0);
     setCorrectCount(0);
     setPicked(null);
@@ -2404,34 +2427,39 @@ export default function AIGame() {
     return clearTick;
   }, [phase, qIndex, revealed, current, clearTick]);
 
-  /* After lives hit zero (post-reveal), end the game */
+  /* Advance to the next question (or end the game) */
   const goNext = useCallback(() => {
     if (lives <= 0) {
       endGame(score);
       return;
     }
-    // Loop the queue if exhausted, re-shuffling for freshness
-    setQIndex((i) => {
-      const next = i + 1;
-      if (next >= queue.length) {
-        setQueue((prev) => {
-          const lastQ = prev[prev.length - 1]?.q;
-          const reshuffled = shuffle(prev);
-          // Avoid an immediate back-to-back repeat of the just-seen question
-          if (reshuffled.length > 1 && reshuffled[0].q === lastQ) {
-            [reshuffled[0], reshuffled[1]] = [reshuffled[1], reshuffled[0]];
-          }
-          return reshuffled.map((sq) => serveQuestion(sq));
-        });
-        return 0;
+    const next = qIndex + 1;
+    const finite = level ? isFiniteLevel(level) : false;
+    if (next >= queue.length) {
+      if (finite) {
+        // Marathon complete — end after the fixed-length queue is exhausted.
+        endGame(score);
+        return;
       }
-      return next;
-    });
+      // Endless levels loop, re-shuffling for freshness.
+      setQueue((prev) => {
+        const lastQ = prev[prev.length - 1]?.q;
+        const reshuffled = shuffle(prev);
+        // Avoid an immediate back-to-back repeat of the just-seen question
+        if (reshuffled.length > 1 && reshuffled[0].q === lastQ) {
+          [reshuffled[0], reshuffled[1]] = [reshuffled[1], reshuffled[0]];
+        }
+        return reshuffled.map((sq) => serveQuestion(sq));
+      });
+      setQIndex(0);
+    } else {
+      setQIndex(next);
+    }
     setPicked(null);
     setRevealed(false);
     setLastGain(null);
     setTimeLeft(TIME_PER_Q);
-  }, [lives, score, endGame, queue.length]);
+  }, [lives, score, endGame, qIndex, queue.length, level]);
 
   // Cleanup on unmount
   useEffect(() => clearTick, [clearTick]);
@@ -2455,19 +2483,20 @@ export default function AIGame() {
   /* ─────────────── RENDER ─────────────── */
 
   if (phase === "menu") {
-    const showTopics = level !== null && level !== "interview";
+    const showTopics = level === "basic" || level === "intermediate" || level === "advanced";
     const canStart = level !== null && poolSize > 0;
+    const jobCount = Math.min(JOB_RUN_LEN, poolSize);
     return (
       <div className="game" data-reveal="">
         <div className="gameMenu">
           {/* Step 1 — Level */}
           <div className="gameMenuHead">
             <p className="eyebrow">Step 1 · Choose your level</p>
-            <h2 className="gameH2">Start basic, or jump straight to interview mode.</h2>
+            <h2 className="gameH2">Warm up, run the 50-question Job Prep, or hit interview mode.</h2>
             <p className="gameLead">
-              Answer fast and keep a streak alive for bonus points. Three lives — a wrong answer or a
-              run-out timer costs one. Every question ends with a full explanation, so you learn the concept
-              even when you miss.
+              Answer fast and keep a streak alive for bonus points. A wrong answer or a run-out timer costs
+              a life. Every question ends with a full explanation, so you learn the concept even when you
+              miss — the Job Prep marathon covers everything an AI/ML role expects in one sitting.
             </p>
           </div>
 
@@ -2520,6 +2549,14 @@ export default function AIGame() {
             </div>
           )}
 
+          {level === "job" && (
+            <div className="gameInterviewNote gameJobNote">
+              💼 <strong>Job Prep marathon</strong> — a fixed {JOB_RUN_LEN}-question run spanning every core
+              concept AI/ML engineering roles test: ML & deep learning, LLMs, MLOps, math, NLP/vision, and
+              your real project stack. You get {JOB_LIVES} lives and a full concept report at the end.
+            </div>
+          )}
+
           {level === "interview" && (
             <div className="gameInterviewNote">
               🎯 <strong>Interview mode</strong> pulls real AI/ML engineer interview questions across all
@@ -2530,7 +2567,11 @@ export default function AIGame() {
           <div className="gameMenuFoot">
             <div className="gameMenuStats">
               <span className="gamePill">
-                {level ? `${poolSize} question${poolSize === 1 ? "" : "s"} in pool` : "Pick a level to begin"}
+                {!level
+                  ? "Pick a level to begin"
+                  : level === "job"
+                  ? `${jobCount}-question marathon`
+                  : `${poolSize} question${poolSize === 1 ? "" : "s"} in pool`}
               </span>
               <span className="gamePill">Best score: {best.toLocaleString()}</span>
             </div>
@@ -2540,7 +2581,11 @@ export default function AIGame() {
               onClick={startGame}
               disabled={!canStart}
             >
-              {level === "interview" ? "Start Interview →" : "Start Gauntlet →"}
+              {level === "interview"
+                ? "Start Interview →"
+                : level === "job"
+                ? "Start Job Prep →"
+                : "Start Gauntlet →"}
             </button>
           </div>
         </div>
@@ -2614,7 +2659,12 @@ export default function AIGame() {
       {level && (
         <div className={`gameLevelBanner gameLevel-${level}`}>
           <span aria-hidden="true">{LEVEL_MAP[level].icon}</span>
-          <span>{LEVEL_MAP[level].label} level</span>
+          <span>
+            {LEVEL_MAP[level].label}
+            {isFiniteLevel(level)
+              ? ` · Question ${Math.min(qIndex + 1, queue.length)} of ${queue.length}`
+              : " level"}
+          </span>
         </div>
       )}
       <div className="gameHud">
@@ -2629,7 +2679,7 @@ export default function AIGame() {
         <div className="gameHudItem">
           <span className="gameHudLabel">Lives</span>
           <span className="gameHudVal gameLives">
-            {Array.from({ length: LIVES_START }).map((_, i) => (
+            {Array.from({ length: livesMax }).map((_, i) => (
               <span key={i} className={i < lives ? "gameHeart" : "gameHeart gameHeartOut"} aria-hidden="true">
                 {i < lives ? "❤️" : "🖤"}
               </span>
@@ -2637,8 +2687,10 @@ export default function AIGame() {
           </span>
         </div>
         <div className="gameHudItem gameHudBestWrap">
-          <span className="gameHudLabel">Best</span>
-          <span className="gameHudVal">{best.toLocaleString()}</span>
+          <span className="gameHudLabel">{level && isFiniteLevel(level) ? "Answered" : "Best"}</span>
+          <span className="gameHudVal">
+            {level && isFiniteLevel(level) ? `${answered}/${queue.length}` : best.toLocaleString()}
+          </span>
         </div>
       </div>
 
@@ -2695,7 +2747,9 @@ export default function AIGame() {
               </div>
               <p className="gameExplain">{current.explain}</p>
               <button type="button" className="btn btnPrimary gameNextBtn" onClick={goNext} autoFocus>
-                {lives <= 0 ? "See results →" : "Next question →"}
+                {lives <= 0 || (level && isFiniteLevel(level) && qIndex + 1 >= queue.length)
+                  ? "See results →"
+                  : "Next question →"}
               </button>
             </div>
           )}

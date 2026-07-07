@@ -1694,8 +1694,12 @@ a {
 /* ── Level picker ── */
 .gameLevelGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 14px;
+}
+
+@media (max-width: 1100px) {
+  .gameLevelGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .gameLevelCard {
@@ -1732,6 +1736,7 @@ a {
 .gameLevel-basic { --lvl: #2e7d32; }
 .gameLevel-intermediate { --lvl: #9b6b2f; }
 .gameLevel-advanced { --lvl: #c0392b; }
+.gameLevel-job { --lvl: #2f7a6f; }
 .gameLevel-interview { --lvl: #2a4a7a; }
 
 .gameLevelCard:hover {
@@ -1794,6 +1799,15 @@ a {
 
 .gameInterviewNote strong {
   color: #1e3a5f;
+}
+
+.gameJobNote {
+  background: linear-gradient(135deg, rgba(47, 122, 111, 0.12), rgba(155, 107, 47, 0.08));
+  border-color: rgba(47, 122, 111, 0.26);
+}
+
+.gameJobNote strong {
+  color: #22574f;
 }
 
 /* ── In-game level banner ── */
